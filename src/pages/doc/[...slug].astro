@@ -22,7 +22,14 @@ if (!content) {
 
 const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
 const rawBody = frontmatterMatch ? content.replace(frontmatterMatch[0], '') : content;
-const htmlContent = marked.parse(rawBody);
+
+// Rewrite internal .md links to be extensionless for the human-friendly view
+let htmlContent = marked.parse(rawBody);
+if (slug.endsWith('_index')) {
+    // Only apply to _index pages or all? User asked for _index pages specifically
+    // Use a regex to find hrefs ending in .md and remove the extension
+    htmlContent = htmlContent.replace(/href="([^"]+)\.md"/g, 'href="$1"');
+}
 
 let title = slug.split('/').pop();
 let source = slug;

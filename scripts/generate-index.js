@@ -14,16 +14,15 @@ function getMarkdownFiles(dir, fileList = []) {
       const content = fs.readFileSync(filePath, 'utf-8');
       const titleMatch = content.match(/title:\s*(.*)/);
       
-      // Copy to public/raw for direct agent access
       const publicPath = path.join(process.cwd(), 'public', 'raw', relativePath);
       fs.mkdirSync(path.dirname(publicPath), { recursive: true });
       fs.copyFileSync(filePath, publicPath);
 
       fileList.push({
-        slug,
-        title: titleMatch ? titleMatch[1] : slug.split('/').pop(),
-        path: '/doc/' + slug,
-        raw: '/raw/' + slug + '.md'
+        slug: slug.split(path.sep).join('/'),
+        title: titleMatch ? titleMatch[1].trim() : slug.split(path.sep).pop(),
+        path: '/doc/' + slug.split(path.sep).join('/'),
+        raw: '/raw/' + relativePath.split(path.sep).join('/')
       });
     }
   });

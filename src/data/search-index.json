@@ -18,6 +18,12 @@
     "raw": "/raw/docs.astro.build/en/getting-started.md"
   },
   {
+    "slug": "docs.astro.build/en/install-and-setup",
+    "title": "Install Astro",
+    "path": "/doc/docs.astro.build/en/install-and-setup",
+    "raw": "/raw/docs.astro.build/en/install-and-setup.md"
+  },
+  {
     "slug": "www.google.com/index",
     "title": "Google",
     "path": "/doc/www.google.com/index",
