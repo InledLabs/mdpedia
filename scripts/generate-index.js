@@ -1,0 +1,36 @@
+import fs from 'fs';
+import path from 'path';
+
+function getMarkdownFiles(dir, fileList = []) {
+  if (!fs.existsSync(dir)) return fileList;
+  const files = fs.readdirSync(dir);
+  files.forEach(file => {
+    const filePath = path.join(dir, file);
+    if (fs.statSync(filePath).isDirectory()) {
+      getMarkdownFiles(filePath, fileList);
+    } else if (file.endsWith('.md')) {
+      const relativePath = path.relative(path.join(process.cwd(), 'src', 'docs'), filePath);
+      const slug = relativePath.replace(/\.md$/, '');
+      const content = fs.readFileSync(filePath, 'utf-8');
+      const titleMatch = content.match(/title:\s*(.*)/);
+      
+      // Copy to public/raw for direct agent access
+      const publicPath = path.join(process.cwd(), 'public', 'raw', relativePath);
+      fs.mkdirSync(path.dirname(publicPath), { recursive: true });
+      fs.copyFileSync(filePath, publicPath);
+
+      fileList.push({
+        slug,
+        title: titleMatch ? titleMatch[1] : slug.split('/').pop(),
+        path: '/doc/' + slug,
+        raw: '/raw/' + slug + '.md'
+      });
+    }
+  });
+  return fileList;
+}
+
+const indexedFiles = getMarkdownFiles(path.join(process.cwd(), 'src', 'docs'));
+fs.mkdirSync('src/data', { recursive: true });
+fs.writeFileSync('src/data/search-index.json', JSON.stringify(indexedFiles, null, 2));
+console.log('Search index generated!');

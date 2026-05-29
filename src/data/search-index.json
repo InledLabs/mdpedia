@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "docs.astro.build/_index",
+    "title": "Index of docs.astro.build",
+    "path": "/doc/docs.astro.build/_index",
+    "raw": "/raw/docs.astro.build/_index.md"
+  },
+  {
+    "slug": "docs.astro.build/en/concepts/why-astro",
+    "title": "Why Astro?",
+    "path": "/doc/docs.astro.build/en/concepts/why-astro",
+    "raw": "/raw/docs.astro.build/en/concepts/why-astro.md"
+  },
+  {
+    "slug": "docs.astro.build/en/getting-started",
+    "title": "Getting started",
+    "path": "/doc/docs.astro.build/en/getting-started",
+    "raw": "/raw/docs.astro.build/en/getting-started.md"
+  },
+  {
+    "slug": "www.google.com/index",
+    "title": "Google",
+    "path": "/doc/www.google.com/index",
+    "raw": "/raw/www.google.com/index.md"
+  }
+]
