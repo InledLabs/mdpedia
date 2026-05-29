@@ -55,7 +55,7 @@ if (isJsonRequested || isMarkdownRequested) {
 }
 
 // GitHub Issue URL generation logic
-const isUrl = q && q.startsWith('http');
+const isUrl = q && (q.startsWith('http') || q.includes('.'));
 const githubIssueTitle = isUrl ? q : ("https://" + q);
 const githubIssueUrl = REPO_URL + "/issues/new?title=" + encodeURIComponent(githubIssueTitle);
 const githubReindexUrl = REPO_URL + "/issues/new?title=" + encodeURIComponent("reindex " + githubIssueTitle);
@@ -77,7 +77,7 @@ const githubReindexUrl = REPO_URL + "/issues/new?title=" + encodeURIComponent("r
                         <input 
                             type="text" 
                             name="q" 
-                            placeholder="Search keywords..." 
+                            placeholder="Search keywords or enter a URL to index..." 
                             value={q || ''}
                             class="search-input"
                             autofocus
@@ -85,6 +85,10 @@ const githubReindexUrl = REPO_URL + "/issues/new?title=" + encodeURIComponent("r
                     </div>
                     <button type="submit" class="btn-fluent search-btn">Search</button>
                 </form>
+                
+                <div class="search-guide">
+                    <p>💡 **Tip**: To index new content, enter the URL here. Use <code>*</code> at the end for full site crawling.</p>
+                </div>
             </div>
 
             {q && (
@@ -119,14 +123,36 @@ const githubReindexUrl = REPO_URL + "/issues/new?title=" + encodeURIComponent("r
                                             <p>We couldn't find any documentation matching your search.</p>
                                     </div>
 
+                                    <div class="how-to-index">
+                                        <h2 class="fluent-h2">How to Request Indexing</h2>
+                                        <div class="steps-grid">
+                                            <div class="step-card">
+                                                <div class="step-num">1</div>
+                                                <p>Enter the **Full URL** or **Domain** in the search box above.</p>
+                                            </div>
+                                            <div class="step-card">
+                                                <div class="step-num">2</div>
+                                                <p>Add <code>*</code> at the end if you want to crawl the **entire site** recursively.</p>
+                                            </div>
+                                            <div class="step-card">
+                                                <div class="step-num">3</div>
+                                                <p>Click the **Request Indexing** button below to go to GitHub.</p>
+                                            </div>
+                                            <div class="step-card highlight">
+                                                <div class="step-num">!</div>
+                                                <p>**IMPORTANT**: Simply publish the issue. The title must contain **ONLY the URL** (or reindex command).</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="index-request-card">
                                             <div class="request-content">
                                                     <div class="request-icon">
                                                             <i class="fa-solid fa-cloud-arrow-up"></i>
                                                     </div>
                                                     <div class="request-text">
-                                                            <h3>Want to index this resource?</h3>
-                                                            <p>You can request immediate indexing of this URL via our automated GitHub system.</p>
+                                                            <h3>Ready to Index?</h3>
+                                                            <p>Requesting: <strong>{githubIssueTitle}</strong></p>
                                                     </div>
                                             </div>
                                             <div class="request-action">
@@ -226,6 +252,66 @@ const githubReindexUrl = REPO_URL + "/issues/new?title=" + encodeURIComponent("r
             flex-shrink: 0;
             white-space: nowrap;
             font-size: 1rem;
+        }
+
+        .search-guide {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .search-guide code {
+            background: rgba(0,0,0,0.05);
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        /* How to Index Section */
+        .how-to-index {
+            margin-top: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .step-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .step-card.highlight {
+            border: 2px solid var(--primary);
+            background: rgba(245, 131, 62, 0.02);
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .step-card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-main);
+            margin: 0;
         }
 
         .no-results {
