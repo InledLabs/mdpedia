@@ -19,7 +19,6 @@ async function fetchAndParse(url) {
 
 function cleanTitle(title) {
     if (!title) return "";
-    // Remove common suffixes like " - React", " | Documentation", etc.
     return title.split(' – ')[0].split(' - ')[0].split(' | ')[0].trim();
 }
 
@@ -75,29 +74,26 @@ async function indexSingleUrl(url, skipDomainIndex = false) {
 
 async function indexUrl(inputUrl) {
     let url = inputUrl;
-    let forceReindex = false;
+    let onlyUpdateIndex = false;
 
     if (url.startsWith('reindex ')) {
-        forceReindex = true;
+        onlyUpdateIndex = true;
         url = url.replace('reindex ', '').trim();
     }
 
     if (url.endsWith('*')) {
         let baseUrl = url.slice(0, -1);
         if (baseUrl.endsWith('/')) baseUrl = baseUrl.slice(0, -1);
+        const domain = new URL(baseUrl).hostname;
+
+        if (onlyUpdateIndex) {
+            console.log("Updating indices for domain: " + domain);
+            updateDomainIndex(domain);
+            return;
+        }
 
         console.log("Wildcard detected. Exploring: " + baseUrl);
-        
         try {
-            const domain = new URL(baseUrl).hostname;
-            if (forceReindex) {
-                console.log("Forcing reindex for domain: " + domain);
-                const domainDir = path.join('src', 'docs', domain);
-                const rawDir = path.join('public', 'raw', domain);
-                if (fs.existsSync(domainDir)) fs.rmSync(domainDir, { recursive: true });
-                if (fs.existsSync(rawDir)) fs.rmSync(rawDir, { recursive: true });
-            }
-
             const { html } = await fetchAndParse(baseUrl);
             const dom = new JSDOM(html, { url: baseUrl });
             const links = Array.from(dom.window.document.querySelectorAll('a'));
@@ -113,33 +109,25 @@ async function indexUrl(inputUrl) {
                         return isSameOrigin && startsWithBase && isNotSelf;
                     } catch { return false; }
                 })
-                .filter((v, i, a) => a.indexOf(v) === i); // Unique
+                .filter((v, i, a) => a.indexOf(v) === i);
 
             console.log("Found " + toIndex.length + " links to process.");
-            
             for (const link of toIndex) {
                 await indexSingleUrl(link, true);
             }
-            
             updateDomainIndex(domain);
-            
         } catch (error) {
             console.error("Error exploring wildcard: " + error.message);
             process.exit(1);
         }
     } else {
-        if (forceReindex) {
-            try {
-                const urlObj = new URL(url);
-                const domain = urlObj.hostname;
-                const pathname = urlObj.pathname === '/' ? '/index' : urlObj.pathname;
-                const filePath = path.join('src', 'docs', domain, pathname + ".md");
-                const rawPath = path.join('public', 'raw', domain, pathname + ".md");
-                if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
-                if (fs.existsSync(rawPath)) fs.unlinkSync(rawPath);
-            } catch (e) {}
+        const urlObj = new URL(url);
+        const domain = urlObj.hostname;
+        if (onlyUpdateIndex) {
+            updateDomainIndex(domain);
+        } else {
+            await indexSingleUrl(url);
         }
-        await indexSingleUrl(url);
     }
 }
 
@@ -158,20 +146,15 @@ function updateDomainIndex(domain) {
             } else if (file.endsWith('.md') && file !== '_index.md') {
                 const content = fs.readFileSync(fullPath, 'utf-8');
                 const titleMatch = content.match(/title:\s*(.*)/);
-                const sourceMatch = content.match(/source:\s*(.*)/);
                 const relativePath = path.relative(domainDir, fullPath);
                 const webRelativePath = relativePath.split(path.sep).join('/').replace(/\.md$/, '');
                 
                 let title = titleMatch ? titleMatch[1].trim() : file;
-                if (title === "React") {
-                    // Fallback to path if title is too generic
-                    title = webRelativePath.split('/').pop();
-                }
+                if (title === "React") title = webRelativePath.split('/').pop();
 
                 files.push({
                     title: title,
-                    path: "./" + webRelativePath,
-                    originalUrl: sourceMatch ? sourceMatch[1].trim() : ''
+                    path: "./" + webRelativePath
                 });
             }
         });
@@ -179,10 +162,8 @@ function updateDomainIndex(domain) {
 
     walk(domainDir);
 
-    if (files.length > 1) {
+    if (files.length > 0) {
         let indexContent = "---\ntitle: Knowledge Index for " + domain + "\nsource: https://" + domain + "\n---\n\n# 📚 Knowledge Index for " + domain + "\n\nThis is a generated index of all documentation resources retrieved from **" + domain + "**.\n\n";
-        
-        // Group by subdirectories for a better UI
         const structure = {};
         files.forEach(f => {
             const parts = f.path.replace('./', '').split('/');
@@ -207,7 +188,6 @@ function updateDomainIndex(domain) {
         });
         
         indexContent += "\n---\n*Generated by MDPEDIA — Knowledge for the AI Era*\n";
-        
         fs.writeFileSync(path.join(domainDir, '_index.md'), indexContent);
         console.log("Domain index updated for " + domain);
         patchFilesWithIndexInstruction(domain, domainDir);
@@ -224,7 +204,6 @@ function patchFilesWithIndexInstruction(domain, domainDir) {
                 walk(fullPath);
             } else if (file.endsWith('.md') && file !== '_index.md') {
                 let content = fs.readFileSync(fullPath, 'utf-8');
-                
                 const relativeDir = path.relative(path.dirname(fullPath), domainDir);
                 const indexPath = path.join(relativeDir, '_index.md').split(path.sep).join('/').replace(/\.md$/, '');
                 const finalPath = indexPath.startsWith('.') ? indexPath : "./" + indexPath;

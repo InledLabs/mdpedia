@@ -35,8 +35,9 @@ jobs:
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Index: ${{ github.event.issue.title }}"
+          commit_message: "Index update: ${{ github.event.issue.title }}"
           file_pattern: "src/docs/** public/raw/** src/data/search-index.json"
+          add_options: "--force"
 
       - name: Comment and close issue
         uses: actions/github-script@v7
@@ -46,31 +47,32 @@ jobs:
             const user = context.payload.issue.user.login;
             const url = context.payload.issue.title;
             const isWildcard = url.endsWith('*');
+            const isReindex = url.startsWith('reindex ');
             
-            let body = `¡Hola @${user}! Indexación completada con éxito. 🚀\n\n`;
+            let body = "¡Hola @" + user + "! ";
+            body += isReindex ? "Actualización de índices completada. 🛠️\n\n" : "Indexación completada con éxito. 🚀\n\n";
             
-            if (isWildcard) {
-                const baseUrl = url.slice(0, -1);
-                const urlObj = new URL(baseUrl);
+            if (isWildcard || isReindex) {
+                const cleanUrl = url.replace('reindex ', '').replace('*', '');
+                const urlObj = new URL(cleanUrl);
                 const domain = urlObj.hostname;
                 const pathname = urlObj.pathname === '/' ? '' : urlObj.pathname;
-                const indexPath = `doc/${domain}${pathname}/_index`;
+                const indexPath = "doc/" + domain + pathname + "/_index";
                 
-                body += `Has solicitado una indexación masiva del directorio **${baseUrl}**.\n\n` +
-                        `- 📚 **Índice del Dominio**: [${indexPath}](https://inledgroup.github.io/mdpedia/${indexPath})\n` +
-                        `- 🔍 Puedes buscar términos específicos de este dominio en el buscador principal.\n\n`;
+                body += "Se han procesado los índices para el dominio **" + domain + "**.\n\n" +
+                        "- 📚 **Índice del Dominio**: [" + indexPath + "](https://inledgroup.github.io/mdpedia/" + indexPath + ")\n";
             } else {
                 const urlObj = new URL(url);
                 const domain = urlObj.hostname;
                 const pathname = urlObj.pathname === '/' ? '/index' : urlObj.pathname;
-                const publicPath = `raw/${domain}${pathname}.md`;
-                const docPath = `doc/${domain}${pathname}`;
+                const publicPath = "raw/" + domain + pathname + ".md";
+                const docPath = "doc/" + domain + pathname;
                 
-                body += `- 📖 **Vista Humana**: [${docPath}](https://inledgroup.github.io/mdpedia/${docPath})\n` +
-                        `- 🤖 **Raw para Agentes**: https://inledgroup.github.io/mdpedia/${publicPath}\n\n`;
+                body += "- 📖 **Vista Humana**: [" + docPath + "](https://inledgroup.github.io/mdpedia/" + docPath + ")\n" +
+                        "- 🤖 **Raw para Agentes**: https://inledgroup.github.io/mdpedia/" + publicPath + "\n\n";
             }
             
-            body += `*Nota: Puede tardar un par de minutos en estar disponible mientras se despliega la nueva versión.*`;
+            body += "*Nota: Puede tardar un par de minutos en estar disponible mientras se despliega la nueva versión.*";
 
             await github.rest.issues.createComment({
               owner: context.repo.owner,
