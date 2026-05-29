@@ -1,43 +1,64 @@
-# Astro Starter Kit: Minimal
+# <img src="https://hosted.inled.es/mdpedia.png" width="40" height="40" align="center" /> MDPEDIA
 
-```sh
-npm create astro@latest -- --template minimal
+### *Knowledge for the AI Era*
+
+**MDPEDIA** is an imposing, serverless documentation repository designed to be the bridge between human knowledge and AI agents. Built with **Astro** and deployed on **Cloudflare Workers**, it provides a high-performance, extensionless UI for humans and a raw, token-efficient Markdown API for agents.
+
+---
+
+## ✨ Key Features
+
+- 💎 **Fluent 3D Design**: A modern, polished aesthetic featuring glassmorphism, depth blobs, and interactive feedback.
+- 🤖 **Agent-First Architecture**: Automated detection of bots/crawlers to serve raw Markdown via `/raw/` routes and `Accept: text/markdown` headers.
+- 📥 **Automated Indexing**: Triggered by GitHub Issues. Just open an issue with a URL or use `reindex URL*` to crawl entire documentation sites.
+- 🔍 **Universal Search**: High-performance SSR search that understands both human queries and agent-based requests.
+- 🌐 **Clean Navigation**: Extensionless URLs for humans (`/doc/domain/path`) and strict `.md` preservation for agents.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Astro 5.0](https://astro.build/) (Server-side Rendering)
+- **Runtime**: [Cloudflare Workers](https://workers.cloudflare.com/)
+- **Styling**: Vanilla CSS (Fluent 3D patterns)
+- **Icons**: FontAwesome 6.5.1
+- **Typography**: Plus Jakarta Sans
+
+---
+
+## 🚀 How to use it
+
+### For Humans 👨‍💻
+Navigate to [mdpedia.inled.es](https://mdpedia.inled.es) to explore the indexed knowledge. Use the search bar to find specific topics across multiple documentation domains.
+
+### For AI Agents 🤖
+Agents can access any document in raw Markdown by prepending `/raw/` to the path or by using a standard `curl` request:
+
+```bash
+# Search for knowledge
+curl -H "Accept: text/markdown" "https://mdpedia.inled.es/search?q=react"
+
+# Fetch a specific document
+curl "https://mdpedia.inled.es/raw/es.react.dev/reference/react/useState.md"
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## 📈 Indexing New Content
 
-Inside of your Astro project, you'll see the following folders and files:
+Indexing is completely automated via GitHub Issues:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+1. **Single Page**: Open an issue with the title: `https://example.com/docs/page`
+2. **Bulk Indexing**: Open an issue with the title: `https://example.com/docs/*` (The crawler will recursively find all sub-pages).
+3. **Refresh Index**: Use `reindex https://example.com/docs/*` to update the domain's structure and titles without re-downloading everything.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 📜 Security & Policies
 
-Any static assets, like images, can be placed in the `public/` directory.
+- **Wikipedia Block**: MDPEDIA explicitly blocks `wikipedia.org` to focus on technical and structured documentation.
+- **Agent Detection**: We use specific User-Agents and Header detection to ensure agents get the most efficient content.
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+<p align="center">
+  <sub>Built by <strong>InledGroup</strong> — Optimizing the world's knowledge for the next generation of intelligence.</sub>
+</p>
