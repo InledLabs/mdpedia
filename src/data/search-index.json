@@ -582,6 +582,258 @@
     "raw": "/raw/es.react.dev/reference.md"
   },
   {
+    "slug": "libp2p.io/_index",
+    "title": "\"Knowledge Index for libp2p.io\"",
+    "path": "/doc/libp2p.io/_index",
+    "raw": "/raw/libp2p.io/_index.md"
+  },
+  {
+    "slug": "libp2p.io/docs/addressing",
+    "title": "\"Addressing\"",
+    "path": "/doc/libp2p.io/docs/addressing",
+    "raw": "/raw/libp2p.io/docs/addressing.md"
+  },
+  {
+    "slug": "libp2p.io/docs/autonat",
+    "title": "\"AutoNAT\"",
+    "path": "/doc/libp2p.io/docs/autonat",
+    "raw": "/raw/libp2p.io/docs/autonat.md"
+  },
+  {
+    "slug": "libp2p.io/docs/browser-connectivity",
+    "title": "\"Browser Node Connectivity\"",
+    "path": "/doc/libp2p.io/docs/browser-connectivity",
+    "raw": "/raw/libp2p.io/docs/browser-connectivity.md"
+  },
+  {
+    "slug": "libp2p.io/docs/circuit-relay",
+    "title": "\"Circuit Relay\"",
+    "path": "/doc/libp2p.io/docs/circuit-relay",
+    "raw": "/raw/libp2p.io/docs/circuit-relay.md"
+  },
+  {
+    "slug": "libp2p.io/docs/dcutr",
+    "title": "\"DCUtR\"",
+    "path": "/doc/libp2p.io/docs/dcutr",
+    "raw": "/raw/libp2p.io/docs/dcutr.md"
+  },
+  {
+    "slug": "libp2p.io/docs/dht",
+    "title": "\"The DHT\"",
+    "path": "/doc/libp2p.io/docs/dht",
+    "raw": "/raw/libp2p.io/docs/dht.md"
+  },
+  {
+    "slug": "libp2p.io/docs/discovery-routing-overview",
+    "title": "\"What is Discovery & Routing\"",
+    "path": "/doc/libp2p.io/docs/discovery-routing-overview",
+    "raw": "/raw/libp2p.io/docs/discovery-routing-overview.md"
+  },
+  {
+    "slug": "libp2p.io/docs/dos-mitigation",
+    "title": "\"DoS Mitigation\"",
+    "path": "/doc/libp2p.io/docs/dos-mitigation",
+    "raw": "/raw/libp2p.io/docs/dos-mitigation.md"
+  },
+  {
+    "slug": "libp2p.io/docs/early-negotiation",
+    "title": "\"Early Multiplexer Negotiation\"",
+    "path": "/doc/libp2p.io/docs/early-negotiation",
+    "raw": "/raw/libp2p.io/docs/early-negotiation.md"
+  },
+  {
+    "slug": "libp2p.io/docs/getting-started-go",
+    "title": "\"Run a go-libp2p node\"",
+    "path": "/doc/libp2p.io/docs/getting-started-go",
+    "raw": "/raw/libp2p.io/docs/getting-started-go.md"
+  },
+  {
+    "slug": "libp2p.io/docs/getting-started-javascript",
+    "title": "\"Run a js-libp2p node\"",
+    "path": "/doc/libp2p.io/docs/getting-started-javascript",
+    "raw": "/raw/libp2p.io/docs/getting-started-javascript.md"
+  },
+  {
+    "slug": "libp2p.io/docs/getting-started-nim",
+    "title": "\"Run a nim-libp2p node\"",
+    "path": "/doc/libp2p.io/docs/getting-started-nim",
+    "raw": "/raw/libp2p.io/docs/getting-started-nim.md"
+  },
+  {
+    "slug": "libp2p.io/docs/getting-started-rust",
+    "title": "\"Run a rust-libp2p node\"",
+    "path": "/doc/libp2p.io/docs/getting-started-rust",
+    "raw": "/raw/libp2p.io/docs/getting-started-rust.md"
+  },
+  {
+    "slug": "libp2p.io/docs/hole-punching",
+    "title": "\"Hole Punching\"",
+    "path": "/doc/libp2p.io/docs/hole-punching",
+    "raw": "/raw/libp2p.io/docs/hole-punching.md"
+  },
+  {
+    "slug": "libp2p.io/docs/kademlia-dht",
+    "title": "\"Kademlia DHT\"",
+    "path": "/doc/libp2p.io/docs/kademlia-dht",
+    "raw": "/raw/libp2p.io/docs/kademlia-dht.md"
+  },
+  {
+    "slug": "libp2p.io/docs/listen-and-dial",
+    "title": "\"Listening and Dialing\"",
+    "path": "/doc/libp2p.io/docs/listen-and-dial",
+    "raw": "/raw/libp2p.io/docs/listen-and-dial.md"
+  },
+  {
+    "slug": "libp2p.io/docs/local-testing-strategies",
+    "title": "\"Local Testing Strategies\"",
+    "path": "/doc/libp2p.io/docs/local-testing-strategies",
+    "raw": "/raw/libp2p.io/docs/local-testing-strategies.md"
+  },
+  {
+    "slug": "libp2p.io/docs/mdns",
+    "title": "\"mDNS\"",
+    "path": "/doc/libp2p.io/docs/mdns",
+    "raw": "/raw/libp2p.io/docs/mdns.md"
+  },
+  {
+    "slug": "libp2p.io/docs/mplex",
+    "title": "\"mplex\"",
+    "path": "/doc/libp2p.io/docs/mplex",
+    "raw": "/raw/libp2p.io/docs/mplex.md"
+  },
+  {
+    "slug": "libp2p.io/docs/multiplexing-overview",
+    "title": "\"What is Stream Multiplexing\"",
+    "path": "/doc/libp2p.io/docs/multiplexing-overview",
+    "raw": "/raw/libp2p.io/docs/multiplexing-overview.md"
+  },
+  {
+    "slug": "libp2p.io/docs/nat-overview",
+    "title": "\"What are NATs\"",
+    "path": "/doc/libp2p.io/docs/nat-overview",
+    "raw": "/raw/libp2p.io/docs/nat-overview.md"
+  },
+  {
+    "slug": "libp2p.io/docs/noise",
+    "title": "\"Noise\"",
+    "path": "/doc/libp2p.io/docs/noise",
+    "raw": "/raw/libp2p.io/docs/noise.md"
+  },
+  {
+    "slug": "libp2p.io/docs/peers",
+    "title": "\"Peers\"",
+    "path": "/doc/libp2p.io/docs/peers",
+    "raw": "/raw/libp2p.io/docs/peers.md"
+  },
+  {
+    "slug": "libp2p.io/docs/protocols",
+    "title": "\"Protocols\"",
+    "path": "/doc/libp2p.io/docs/protocols",
+    "raw": "/raw/libp2p.io/docs/protocols.md"
+  },
+  {
+    "slug": "libp2p.io/docs/pubsub",
+    "title": "\"What is Publish/Subscribe\"",
+    "path": "/doc/libp2p.io/docs/pubsub",
+    "raw": "/raw/libp2p.io/docs/pubsub.md"
+  },
+  {
+    "slug": "libp2p.io/docs/quic",
+    "title": "\"QUIC\"",
+    "path": "/doc/libp2p.io/docs/quic",
+    "raw": "/raw/libp2p.io/docs/quic.md"
+  },
+  {
+    "slug": "libp2p.io/docs/rendezvous",
+    "title": "\"Rendezvous\"",
+    "path": "/doc/libp2p.io/docs/rendezvous",
+    "raw": "/raw/libp2p.io/docs/rendezvous.md"
+  },
+  {
+    "slug": "libp2p.io/docs/secure-channels-overview",
+    "title": "\"What are Secure Channels\"",
+    "path": "/doc/libp2p.io/docs/secure-channels-overview",
+    "raw": "/raw/libp2p.io/docs/secure-channels-overview.md"
+  },
+  {
+    "slug": "libp2p.io/docs/security-considerations",
+    "title": "\"Security Considerations\"",
+    "path": "/doc/libp2p.io/docs/security-considerations",
+    "raw": "/raw/libp2p.io/docs/security-considerations.md"
+  },
+  {
+    "slug": "libp2p.io/docs/standalone-connectivity",
+    "title": "\"Standalone Node Connectivity\"",
+    "path": "/doc/libp2p.io/docs/standalone-connectivity",
+    "raw": "/raw/libp2p.io/docs/standalone-connectivity.md"
+  },
+  {
+    "slug": "libp2p.io/docs/switch",
+    "title": "\"Switch\"",
+    "path": "/doc/libp2p.io/docs/switch",
+    "raw": "/raw/libp2p.io/docs/switch.md"
+  },
+  {
+    "slug": "libp2p.io/docs/tls",
+    "title": "\"TLS\"",
+    "path": "/doc/libp2p.io/docs/tls",
+    "raw": "/raw/libp2p.io/docs/tls.md"
+  },
+  {
+    "slug": "libp2p.io/docs/transports-overview",
+    "title": "\"What are Transports\"",
+    "path": "/doc/libp2p.io/docs/transports-overview",
+    "raw": "/raw/libp2p.io/docs/transports-overview.md"
+  },
+  {
+    "slug": "libp2p.io/docs/webrtc-browser-connectivity",
+    "title": "\"WebRTC with js-libp2p\"",
+    "path": "/doc/libp2p.io/docs/webrtc-browser-connectivity",
+    "raw": "/raw/libp2p.io/docs/webrtc-browser-connectivity.md"
+  },
+  {
+    "slug": "libp2p.io/docs/webrtc",
+    "title": "\"WebRTC\"",
+    "path": "/doc/libp2p.io/docs/webrtc",
+    "raw": "/raw/libp2p.io/docs/webrtc.md"
+  },
+  {
+    "slug": "libp2p.io/docs/webtransport",
+    "title": "\"WebTransport\"",
+    "path": "/doc/libp2p.io/docs/webtransport",
+    "raw": "/raw/libp2p.io/docs/webtransport.md"
+  },
+  {
+    "slug": "libp2p.io/docs/write-a-hole-punch-test-app",
+    "title": "\"Write a Hole-Punch Test Application\"",
+    "path": "/doc/libp2p.io/docs/write-a-hole-punch-test-app",
+    "raw": "/raw/libp2p.io/docs/write-a-hole-punch-test-app.md"
+  },
+  {
+    "slug": "libp2p.io/docs/write-a-perf-test-app",
+    "title": "\"Write a Performance Test Application\"",
+    "path": "/doc/libp2p.io/docs/write-a-perf-test-app",
+    "raw": "/raw/libp2p.io/docs/write-a-perf-test-app.md"
+  },
+  {
+    "slug": "libp2p.io/docs/write-a-transport-test-app",
+    "title": "\"Write a Transport Test Application\"",
+    "path": "/doc/libp2p.io/docs/write-a-transport-test-app",
+    "raw": "/raw/libp2p.io/docs/write-a-transport-test-app.md"
+  },
+  {
+    "slug": "libp2p.io/docs/yamux",
+    "title": "\"Yamux\"",
+    "path": "/doc/libp2p.io/docs/yamux",
+    "raw": "/raw/libp2p.io/docs/yamux.md"
+  },
+  {
+    "slug": "libp2p.io/docs",
+    "title": "\"What is libp2p\"",
+    "path": "/doc/libp2p.io/docs",
+    "raw": "/raw/libp2p.io/docs.md"
+  },
+  {
     "slug": "www.google.com/index",
     "title": "Google",
     "path": "/doc/www.google.com/index",
