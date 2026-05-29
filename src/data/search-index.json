@@ -582,6 +582,204 @@
     "raw": "/raw/es.react.dev/reference.md"
   },
   {
+    "slug": "gjs.guide/_index",
+    "title": "\"Knowledge Index for gjs.guide\"",
+    "path": "/doc/gjs.guide/_index",
+    "raw": "/raw/gjs.guide/_index.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/development/accessibility",
+    "title": "\"Accessibility | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/development/accessibility",
+    "raw": "/raw/gjs.guide/extensions/development/accessibility.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/development/creating",
+    "title": "\"Getting Started | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/development/creating",
+    "raw": "/raw/gjs.guide/extensions/development/creating.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/development/debugging",
+    "title": "\"Debugging | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/development/debugging",
+    "raw": "/raw/gjs.guide/extensions/development/debugging.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/development/preferences",
+    "title": "\"Preferences | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/development/preferences",
+    "raw": "/raw/gjs.guide/extensions/development/preferences.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/development/targeting-older-gnome",
+    "title": "\"Targeting Older GNOME Versions | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/development/targeting-older-gnome",
+    "raw": "/raw/gjs.guide/extensions/development/targeting-older-gnome.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/development/translations",
+    "title": "\"Translations | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/development/translations",
+    "raw": "/raw/gjs.guide/extensions/development/translations.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/development/typescript",
+    "title": "\"TypeScript and LSP | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/development/typescript",
+    "raw": "/raw/gjs.guide/extensions/development/typescript.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/overview/anatomy",
+    "title": "\"Anatomy of an Extension | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/overview/anatomy",
+    "raw": "/raw/gjs.guide/extensions/overview/anatomy.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/overview/architecture",
+    "title": "\"Architecture | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/overview/architecture",
+    "raw": "/raw/gjs.guide/extensions/overview/architecture.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/overview/imports-and-modules",
+    "title": "\"Imports and Modules | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/overview/imports-and-modules",
+    "raw": "/raw/gjs.guide/extensions/overview/imports-and-modules.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/overview/updates-and-breakage",
+    "title": "\"Updates and Breakage | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/overview/updates-and-breakage",
+    "raw": "/raw/gjs.guide/extensions/overview/updates-and-breakage.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/review-guidelines/review-guidelines",
+    "title": "\"GNOME Shell Extensions Review Guidelines\"",
+    "path": "/doc/gjs.guide/extensions/review-guidelines/review-guidelines",
+    "raw": "/raw/gjs.guide/extensions/review-guidelines/review-guidelines.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/topics/dialogs",
+    "title": "\"Dialogs | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/topics/dialogs",
+    "raw": "/raw/gjs.guide/extensions/topics/dialogs.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/topics/extension-utils",
+    "title": "\"ExtensionUtils | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/topics/extension-utils",
+    "raw": "/raw/gjs.guide/extensions/topics/extension-utils.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/topics/extension",
+    "title": "\"Extension (ESModule) | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/topics/extension",
+    "raw": "/raw/gjs.guide/extensions/topics/extension.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/topics/notifications",
+    "title": "\"Notifications | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/topics/notifications",
+    "raw": "/raw/gjs.guide/extensions/topics/notifications.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/topics/popup-menu",
+    "title": "\"Popup Menu | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/topics/popup-menu",
+    "raw": "/raw/gjs.guide/extensions/topics/popup-menu.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/topics/quick-settings",
+    "title": "\"Quick Settings | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/topics/quick-settings",
+    "raw": "/raw/gjs.guide/extensions/topics/quick-settings.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/topics/search-provider",
+    "title": "\"Search Provider | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/topics/search-provider",
+    "raw": "/raw/gjs.guide/extensions/topics/search-provider.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/topics/session-modes",
+    "title": "\"Session Modes | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/topics/session-modes",
+    "raw": "/raw/gjs.guide/extensions/topics/session-modes.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/topics/st-widgets",
+    "title": "\"St Widgets | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/topics/st-widgets",
+    "raw": "/raw/gjs.guide/extensions/topics/st-widgets.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/upgrading/gnome-shell-40",
+    "title": "\"Port Extensions to GNOME Shell 40\"",
+    "path": "/doc/gjs.guide/extensions/upgrading/gnome-shell-40",
+    "raw": "/raw/gjs.guide/extensions/upgrading/gnome-shell-40.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/upgrading/gnome-shell-42",
+    "title": "\"Port Extensions to GNOME Shell 42\"",
+    "path": "/doc/gjs.guide/extensions/upgrading/gnome-shell-42",
+    "raw": "/raw/gjs.guide/extensions/upgrading/gnome-shell-42.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/upgrading/gnome-shell-43",
+    "title": "\"Port Extensions to GNOME Shell 43\"",
+    "path": "/doc/gjs.guide/extensions/upgrading/gnome-shell-43",
+    "raw": "/raw/gjs.guide/extensions/upgrading/gnome-shell-43.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/upgrading/gnome-shell-44",
+    "title": "\"Port Extensions to GNOME Shell 44\"",
+    "path": "/doc/gjs.guide/extensions/upgrading/gnome-shell-44",
+    "raw": "/raw/gjs.guide/extensions/upgrading/gnome-shell-44.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/upgrading/gnome-shell-45",
+    "title": "\"Port Extensions to GNOME Shell 45\"",
+    "path": "/doc/gjs.guide/extensions/upgrading/gnome-shell-45",
+    "raw": "/raw/gjs.guide/extensions/upgrading/gnome-shell-45.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/upgrading/gnome-shell-46",
+    "title": "\"Port Extensions to GNOME Shell 46\"",
+    "path": "/doc/gjs.guide/extensions/upgrading/gnome-shell-46",
+    "raw": "/raw/gjs.guide/extensions/upgrading/gnome-shell-46.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/upgrading/gnome-shell-47",
+    "title": "\"Port Extensions to GNOME Shell 47\"",
+    "path": "/doc/gjs.guide/extensions/upgrading/gnome-shell-47",
+    "raw": "/raw/gjs.guide/extensions/upgrading/gnome-shell-47.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/upgrading/gnome-shell-48",
+    "title": "\"Port Extensions to GNOME Shell 48\"",
+    "path": "/doc/gjs.guide/extensions/upgrading/gnome-shell-48",
+    "raw": "/raw/gjs.guide/extensions/upgrading/gnome-shell-48.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/upgrading/gnome-shell-49",
+    "title": "\"Port Extensions to GNOME Shell 49\"",
+    "path": "/doc/gjs.guide/extensions/upgrading/gnome-shell-49",
+    "raw": "/raw/gjs.guide/extensions/upgrading/gnome-shell-49.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/upgrading/gnome-shell-50",
+    "title": "\"Port Extensions to GNOME Shell 50\"",
+    "path": "/doc/gjs.guide/extensions/upgrading/gnome-shell-50",
+    "raw": "/raw/gjs.guide/extensions/upgrading/gnome-shell-50.md"
+  },
+  {
+    "slug": "gjs.guide/extensions/upgrading/legacy-documentation",
+    "title": "\"Legacy Documentation | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/extensions/upgrading/legacy-documentation",
+    "raw": "/raw/gjs.guide/extensions/upgrading/legacy-documentation.md"
+  },
+  {
     "slug": "libp2p.io/_index",
     "title": "\"Knowledge Index for libp2p.io\"",
     "path": "/doc/libp2p.io/_index",
