@@ -19,9 +19,7 @@ async function fetchAndParse(url) {
 
 function cleanTitle(title) {
     if (!title) return "";
-    // Remove " – React", " - React", " | React", etc.
     let clean = title.replace(/\s*[–\-\|]\s*React\s*$/i, '');
-    // Remove common documentation suffixes
     clean = clean.replace(/\s*[–\-\|]\s*Documentation\s*$/i, '');
     return clean.trim();
 }
@@ -150,19 +148,17 @@ function updateDomainIndex(domain) {
             } else if (file.endsWith('.md') && file !== '_index.md') {
                 const content = fs.readFileSync(fullPath, 'utf-8');
                 const titleMatch = content.match(/title:\s*"(.*)"/);
-                const sourceMatch = content.match(/source:\s*(.*)/);
                 const relativePath = path.relative(domainDir, fullPath);
                 const webRelativePath = relativePath.split(path.sep).join('/').replace(/\.md$/, '');
                 
                 let title = titleMatch ? titleMatch[1].trim() : file;
-                // If title is too short or generic, use slug
                 if (title.toLowerCase() === "react" || title.length < 2) {
                     title = webRelativePath.split('/').pop().replace(/[\-_]/g, ' ');
                 }
 
                 files.push({
                     title: title,
-                    path: "./" + webRelativePath
+                    path: webRelativePath
                 });
             }
         });
@@ -174,7 +170,7 @@ function updateDomainIndex(domain) {
         let indexContent = "---\ntitle: \"Knowledge Index for " + domain + "\"\nsource: https://" + domain + "\n---\n\n# 📚 Knowledge Index for " + domain + "\n\nThis is a generated index of all documentation resources retrieved from **" + domain + "**.\n\n";
         const structure = {};
         files.forEach(f => {
-            const parts = f.path.replace('./', '').split('/');
+            const parts = f.path.split('/');
             if (parts.length > 1) {
                 const folder = parts[0];
                 if (!structure[folder]) structure[folder] = [];
@@ -190,7 +186,8 @@ function updateDomainIndex(domain) {
                 indexContent += "### 📁 " + folder.charAt(0).toUpperCase() + folder.slice(1) + "\n";
             }
             structure[folder].sort((a,b) => a.title.localeCompare(b.title)).forEach(f => {
-                indexContent += "- [" + f.title + "](" + f.path + ")\n";
+                // FORCE ABSOLUTE PATH FROM /doc/ TO AVOID SUBDIRECTORY NESTING ISSUES
+                indexContent += "- [" + f.title + "](/doc/" + domain + "/" + f.path + ")\n";
             });
             indexContent += "\n";
         });
@@ -212,9 +209,8 @@ function patchFilesWithIndexInstruction(domain, domainDir) {
                 walk(fullPath);
             } else if (file.endsWith('.md') && file !== '_index.md') {
                 let content = fs.readFileSync(fullPath, 'utf-8');
-                const relativeDir = path.relative(path.dirname(fullPath), domainDir);
-                const indexPath = path.join(relativeDir, '_index.md').split(path.sep).join('/').replace(/\.md$/, '');
-                const finalPath = indexPath.startsWith('.') ? indexPath : "./" + indexPath;
+                // Use absolute path for index instruction to avoid relative link hell
+                const finalPath = "/doc/" + domain + "/_index";
                 const instruction = "> 💡 **Tip**: Explore all indexed documents for **" + domain + "** in the [Domain Index](" + finalPath + ").";
                 
                 if (content.indexOf('[Domain Index]') === -1) {
