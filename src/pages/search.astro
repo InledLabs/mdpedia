@@ -170,15 +170,16 @@ const githubReindexUrl = REPO_URL + "/issues/new?title=" + encodeURIComponent("r
                 letter-spacing: -0.5px;
         }
 
-        /* New Search Form Styles */
+        /* Fixed Search Form Styles */
         .search-form-container {
             margin-bottom: 4rem;
         }
 
         .search-bar-form {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             width: 100%;
+            align-items: stretch;
         }
 
         .search-input-wrapper {
@@ -219,9 +220,11 @@ const githubReindexUrl = REPO_URL + "/issues/new?title=" + encodeURIComponent("r
         }
 
         .search-btn {
-            padding: 0 2.5rem;
-            height: 100%;
+            padding: 0 3rem;
+            height: auto;
             border-radius: 20px;
+            flex-shrink: 0;
+            white-space: nowrap;
         }
 
         .no-results {
