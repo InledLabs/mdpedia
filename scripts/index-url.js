@@ -66,13 +66,30 @@ async function indexSingleUrl(url, skipDomainIndex = false) {
 }
 
 async function indexUrl(inputUrl) {
-    if (inputUrl.endsWith('*')) {
-        let baseUrl = inputUrl.slice(0, -1);
+    let url = inputUrl;
+    let forceReindex = false;
+
+    if (url.startsWith('reindex ')) {
+        forceReindex = true;
+        url = url.replace('reindex ', '').trim();
+    }
+
+    if (url.endsWith('*')) {
+        let baseUrl = url.slice(0, -1);
         if (baseUrl.endsWith('/')) baseUrl = baseUrl.slice(0, -1);
 
         console.log("Wildcard detected. Exploring: " + baseUrl);
         
         try {
+            const domain = new URL(baseUrl).hostname;
+            if (forceReindex) {
+                console.log("Forcing reindex for domain: " + domain);
+                const domainDir = path.join('src', 'docs', domain);
+                const rawDir = path.join('public', 'raw', domain);
+                if (fs.existsSync(domainDir)) fs.rmSync(domainDir, { recursive: true });
+                if (fs.existsSync(rawDir)) fs.rmSync(rawDir, { recursive: true });
+            }
+
             const { html } = await fetchAndParse(baseUrl);
             const dom = new JSDOM(html, { url: baseUrl });
             const links = Array.from(dom.window.document.querySelectorAll('a'));
@@ -96,7 +113,6 @@ async function indexUrl(inputUrl) {
                 await indexSingleUrl(link, true);
             }
             
-            const domain = new URL(baseUrl).hostname;
             updateDomainIndex(domain);
             
         } catch (error) {
@@ -104,7 +120,18 @@ async function indexUrl(inputUrl) {
             process.exit(1);
         }
     } else {
-        await indexSingleUrl(inputUrl);
+        if (forceReindex) {
+            try {
+                const urlObj = new URL(url);
+                const domain = urlObj.hostname;
+                const pathname = urlObj.pathname === '/' ? '/index' : urlObj.pathname;
+                const filePath = path.join('src', 'docs', domain, pathname + ".md");
+                const rawPath = path.join('public', 'raw', domain, pathname + ".md");
+                if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+                if (fs.existsSync(rawPath)) fs.unlinkSync(rawPath);
+            } catch (e) {}
+        }
+        await indexSingleUrl(url);
     }
 }
 

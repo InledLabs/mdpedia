@@ -58,6 +58,7 @@ if (isJsonRequested || isMarkdownRequested) {
 const isUrl = q && q.startsWith('http');
 const githubIssueTitle = isUrl ? q : ("https://" + q);
 const githubIssueUrl = REPO_URL + "/issues/new?title=" + encodeURIComponent(githubIssueTitle);
+const githubReindexUrl = REPO_URL + "/issues/new?title=" + encodeURIComponent("reindex " + githubIssueTitle);
 ---
 
 <Layout title={q ? ("Search: " + q) : "Search"}>
@@ -69,21 +70,27 @@ const githubIssueUrl = REPO_URL + "/issues/new?title=" + encodeURIComponent(gith
 	</div>
 
 	{results.length > 0 ? (
-		<div class="results-container">
-			<div class="card-grid">
-				{results.map(res => (
-					<a href={res.path} class="doc-card">
-						<div class="card-icon">
-							<i class={res.slug.includes('_index') ? "fa-solid fa-book" : "fa-solid fa-file-lines"}></i>
-						</div>
-						<div class="card-content">
-							<span class="doc-title">{res.title}</span>
-							<span class="doc-slug">{res.slug}</span>
-						</div>
-					</a>
-				))}
-			</div>
-		</div>
+        <div class="search-results-wrapper">
+            <div class="results-container">
+                <div class="card-grid">
+                    {results.map(res => (
+                        <a href={res.path} class="doc-card">
+                            <div class="card-icon">
+                                <i class={res.slug.includes('_index') ? "fa-solid fa-book" : "fa-solid fa-file-lines"}></i>
+                            </div>
+                            <div class="card-content">
+                                <span class="doc-title">{res.title}</span>
+                                <span class="doc-slug">{res.slug}</span>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+            
+            <div class="reindex-tip">
+                <p>Not seeing what you expected? <a href={githubReindexUrl} target="_blank">Force a reindex on GitHub</a></p>
+            </div>
+        </div>
 	) : (
 		<div class="no-results">
 			<div class="empty-state">
@@ -140,6 +147,22 @@ const githubIssueUrl = REPO_URL + "/issues/new?title=" + encodeURIComponent(gith
 		flex-direction: column;
 		gap: 3rem;
 	}
+
+    .reindex-tip {
+        margin-top: 3rem;
+        text-align: center;
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        background: rgba(0,0,0,0.02);
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .reindex-tip a {
+        color: var(--primary);
+        font-weight: 700;
+        text-decoration: underline;
+    }
 
     /* Reuse Grid Styles */
 	.card-grid {
