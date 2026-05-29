@@ -19,7 +19,11 @@ async function fetchAndParse(url) {
 
 function cleanTitle(title) {
     if (!title) return "";
-    return title.split(' – ')[0].split(' - ')[0].split(' | ')[0].trim();
+    // Remove " – React", " - React", " | React", etc.
+    let clean = title.replace(/\s*[–\-\|]\s*React\s*$/i, '');
+    // Remove common documentation suffixes
+    clean = clean.replace(/\s*[–\-\|]\s*Documentation\s*$/i, '');
+    return clean.trim();
 }
 
 async function indexSingleUrl(url, skipDomainIndex = false) {
@@ -58,7 +62,7 @@ async function indexSingleUrl(url, skipDomainIndex = false) {
     
     const displayTitle = cleanTitle(article.title);
     
-    const content = "---\ntitle: " + displayTitle + "\nsource: " + url + "\nauthor: " + (article.byline || 'Unknown') + "\nexcerpt: " + (article.excerpt || '') + "\n---\n\n# " + displayTitle + "\n\n" + markdown + "\n";
+    const content = "---\ntitle: \"" + displayTitle.replace(/"/g, '\\"') + "\"\nsource: " + url + "\nauthor: " + (article.byline || 'Unknown') + "\nexcerpt: " + (article.excerpt || '').replace(/\n/g, ' ') + "\n---\n\n# " + displayTitle + "\n\n" + markdown + "\n";
 
     fs.writeFileSync(filePath, content);
     
@@ -145,12 +149,16 @@ function updateDomainIndex(domain) {
                 walk(fullPath);
             } else if (file.endsWith('.md') && file !== '_index.md') {
                 const content = fs.readFileSync(fullPath, 'utf-8');
-                const titleMatch = content.match(/title:\s*(.*)/);
+                const titleMatch = content.match(/title:\s*"(.*)"/);
+                const sourceMatch = content.match(/source:\s*(.*)/);
                 const relativePath = path.relative(domainDir, fullPath);
                 const webRelativePath = relativePath.split(path.sep).join('/').replace(/\.md$/, '');
                 
                 let title = titleMatch ? titleMatch[1].trim() : file;
-                if (title === "React") title = webRelativePath.split('/').pop();
+                // If title is too short or generic, use slug
+                if (title.toLowerCase() === "react" || title.length < 2) {
+                    title = webRelativePath.split('/').pop().replace(/[\-_]/g, ' ');
+                }
 
                 files.push({
                     title: title,
@@ -163,7 +171,7 @@ function updateDomainIndex(domain) {
     walk(domainDir);
 
     if (files.length > 0) {
-        let indexContent = "---\ntitle: Knowledge Index for " + domain + "\nsource: https://" + domain + "\n---\n\n# 📚 Knowledge Index for " + domain + "\n\nThis is a generated index of all documentation resources retrieved from **" + domain + "**.\n\n";
+        let indexContent = "---\ntitle: \"Knowledge Index for " + domain + "\"\nsource: https://" + domain + "\n---\n\n# 📚 Knowledge Index for " + domain + "\n\nThis is a generated index of all documentation resources retrieved from **" + domain + "**.\n\n";
         const structure = {};
         files.forEach(f => {
             const parts = f.path.replace('./', '').split('/');
