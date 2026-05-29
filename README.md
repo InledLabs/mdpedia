@@ -6,13 +6,13 @@
 
 ---
 
-## ✨ Key Features
+## ⚙️ How it Works
 
-- 💎 **Fluent 3D Design**: A modern, polished aesthetic featuring glassmorphism, depth blobs, and interactive feedback.
-- 🤖 **Agent-First Architecture**: Automated detection of bots/crawlers to serve raw Markdown via `/raw/` routes and `Accept: text/markdown` headers.
-- 📥 **Automated Indexing**: Triggered by GitHub Issues. Just open an issue with a URL or use `reindex URL*` to crawl entire documentation sites.
-- 🔍 **Universal Search**: High-performance SSR search that understands both human queries and agent-based requests.
-- 🌐 **Clean Navigation**: Extensionless URLs for humans (`/doc/domain/path`) and strict `.md` preservation for agents.
+- **Intelligent Content Routing**: The system automatically detects the requester. Humans are served a polished, extensionless Fluent 3D interface for comfortable reading, while AI agents receive raw, token-efficient Markdown via `/raw/` paths or `Accept` headers.
+- **Issue-Driven Indexing**: MDPEDIA acts as a "remote-controlled" library. By opening a GitHub Issue with a URL, you trigger a serverless crawler that fetches the content, strips away web noise (ads, navbars, trackers), and converts it into structured Markdown.
+- **Recursive Wildcard Expansion**: When a URL ends in `*`, the system performs a directory-level crawl. It maps the entire documentation structure of a domain and indexes every sub-page while maintaining the original hierarchy.
+- **Context-Aware Link Transformation**: To ensure seamless navigation, the system dynamically rewrites internal links. Agents are kept within the high-speed Markdown ecosystem, while humans enjoy clean, extensionless navigation.
+- **Zero-Latency Global Search**: By utilizing a pre-computed search index generated during the build process, MDPEDIA provides millisecond-latency results across all indexed domains without requiring a traditional database.
 
 ## 🛠️ Tech Stack
 
