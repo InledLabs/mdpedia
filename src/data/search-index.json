@@ -840,10 +840,322 @@
     "raw": "/raw/vuejs.org/_index.md"
   },
   {
+    "slug": "vuejs.org/guide/best-practices/accessibility",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/best-practices/accessibility",
+    "raw": "/raw/vuejs.org/guide/best-practices/accessibility.md"
+  },
+  {
+    "slug": "vuejs.org/guide/best-practices/performance",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/best-practices/performance",
+    "raw": "/raw/vuejs.org/guide/best-practices/performance.md"
+  },
+  {
+    "slug": "vuejs.org/guide/best-practices/production-deployment",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/best-practices/production-deployment",
+    "raw": "/raw/vuejs.org/guide/best-practices/production-deployment.md"
+  },
+  {
+    "slug": "vuejs.org/guide/best-practices/security",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/best-practices/security",
+    "raw": "/raw/vuejs.org/guide/best-practices/security.md"
+  },
+  {
+    "slug": "vuejs.org/guide/built-ins/keep-alive",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/built-ins/keep-alive",
+    "raw": "/raw/vuejs.org/guide/built-ins/keep-alive.md"
+  },
+  {
+    "slug": "vuejs.org/guide/built-ins/suspense",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/built-ins/suspense",
+    "raw": "/raw/vuejs.org/guide/built-ins/suspense.md"
+  },
+  {
+    "slug": "vuejs.org/guide/built-ins/teleport",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/built-ins/teleport",
+    "raw": "/raw/vuejs.org/guide/built-ins/teleport.md"
+  },
+  {
+    "slug": "vuejs.org/guide/built-ins/transition-group",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/built-ins/transition-group",
+    "raw": "/raw/vuejs.org/guide/built-ins/transition-group.md"
+  },
+  {
+    "slug": "vuejs.org/guide/built-ins/transition",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/built-ins/transition",
+    "raw": "/raw/vuejs.org/guide/built-ins/transition.md"
+  },
+  {
+    "slug": "vuejs.org/guide/components/async",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/components/async",
+    "raw": "/raw/vuejs.org/guide/components/async.md"
+  },
+  {
+    "slug": "vuejs.org/guide/components/attrs",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/components/attrs",
+    "raw": "/raw/vuejs.org/guide/components/attrs.md"
+  },
+  {
+    "slug": "vuejs.org/guide/components/events",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/components/events",
+    "raw": "/raw/vuejs.org/guide/components/events.md"
+  },
+  {
+    "slug": "vuejs.org/guide/components/props",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/components/props",
+    "raw": "/raw/vuejs.org/guide/components/props.md"
+  },
+  {
+    "slug": "vuejs.org/guide/components/provide-inject",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/components/provide-inject",
+    "raw": "/raw/vuejs.org/guide/components/provide-inject.md"
+  },
+  {
+    "slug": "vuejs.org/guide/components/registration",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/components/registration",
+    "raw": "/raw/vuejs.org/guide/components/registration.md"
+  },
+  {
+    "slug": "vuejs.org/guide/components/slots",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/components/slots",
+    "raw": "/raw/vuejs.org/guide/components/slots.md"
+  },
+  {
+    "slug": "vuejs.org/guide/components/v-model",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/components/v-model",
+    "raw": "/raw/vuejs.org/guide/components/v-model.md"
+  },
+  {
+    "slug": "vuejs.org/guide/essentials/application",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/essentials/application",
+    "raw": "/raw/vuejs.org/guide/essentials/application.md"
+  },
+  {
+    "slug": "vuejs.org/guide/essentials/class-and-style",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/essentials/class-and-style",
+    "raw": "/raw/vuejs.org/guide/essentials/class-and-style.md"
+  },
+  {
+    "slug": "vuejs.org/guide/essentials/component-basics",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/essentials/component-basics",
+    "raw": "/raw/vuejs.org/guide/essentials/component-basics.md"
+  },
+  {
+    "slug": "vuejs.org/guide/essentials/computed",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/essentials/computed",
+    "raw": "/raw/vuejs.org/guide/essentials/computed.md"
+  },
+  {
+    "slug": "vuejs.org/guide/essentials/conditional",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/essentials/conditional",
+    "raw": "/raw/vuejs.org/guide/essentials/conditional.md"
+  },
+  {
+    "slug": "vuejs.org/guide/essentials/event-handling",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/essentials/event-handling",
+    "raw": "/raw/vuejs.org/guide/essentials/event-handling.md"
+  },
+  {
+    "slug": "vuejs.org/guide/essentials/forms",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/essentials/forms",
+    "raw": "/raw/vuejs.org/guide/essentials/forms.md"
+  },
+  {
+    "slug": "vuejs.org/guide/essentials/lifecycle",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/essentials/lifecycle",
+    "raw": "/raw/vuejs.org/guide/essentials/lifecycle.md"
+  },
+  {
+    "slug": "vuejs.org/guide/essentials/list",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/essentials/list",
+    "raw": "/raw/vuejs.org/guide/essentials/list.md"
+  },
+  {
+    "slug": "vuejs.org/guide/essentials/reactivity-fundamentals",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/essentials/reactivity-fundamentals",
+    "raw": "/raw/vuejs.org/guide/essentials/reactivity-fundamentals.md"
+  },
+  {
+    "slug": "vuejs.org/guide/essentials/template-refs",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/essentials/template-refs",
+    "raw": "/raw/vuejs.org/guide/essentials/template-refs.md"
+  },
+  {
+    "slug": "vuejs.org/guide/essentials/template-syntax",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/essentials/template-syntax",
+    "raw": "/raw/vuejs.org/guide/essentials/template-syntax.md"
+  },
+  {
+    "slug": "vuejs.org/guide/essentials/watchers",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/essentials/watchers",
+    "raw": "/raw/vuejs.org/guide/essentials/watchers.md"
+  },
+  {
+    "slug": "vuejs.org/guide/extras/animation",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/extras/animation",
+    "raw": "/raw/vuejs.org/guide/extras/animation.md"
+  },
+  {
+    "slug": "vuejs.org/guide/extras/composition-api-faq",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/extras/composition-api-faq",
+    "raw": "/raw/vuejs.org/guide/extras/composition-api-faq.md"
+  },
+  {
+    "slug": "vuejs.org/guide/extras/reactivity-in-depth",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/extras/reactivity-in-depth",
+    "raw": "/raw/vuejs.org/guide/extras/reactivity-in-depth.md"
+  },
+  {
+    "slug": "vuejs.org/guide/extras/reactivity-transform",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/extras/reactivity-transform",
+    "raw": "/raw/vuejs.org/guide/extras/reactivity-transform.md"
+  },
+  {
+    "slug": "vuejs.org/guide/extras/render-function",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/extras/render-function",
+    "raw": "/raw/vuejs.org/guide/extras/render-function.md"
+  },
+  {
+    "slug": "vuejs.org/guide/extras/rendering-mechanism",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/extras/rendering-mechanism",
+    "raw": "/raw/vuejs.org/guide/extras/rendering-mechanism.md"
+  },
+  {
+    "slug": "vuejs.org/guide/extras/ways-of-using-vue",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/extras/ways-of-using-vue",
+    "raw": "/raw/vuejs.org/guide/extras/ways-of-using-vue.md"
+  },
+  {
+    "slug": "vuejs.org/guide/extras/web-components",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/extras/web-components",
+    "raw": "/raw/vuejs.org/guide/extras/web-components.md"
+  },
+  {
     "slug": "vuejs.org/guide/introduction.html",
     "title": "\"Vue.js\"",
     "path": "/doc/vuejs.org/guide/introduction.html",
     "raw": "/raw/vuejs.org/guide/introduction.html.md"
+  },
+  {
+    "slug": "vuejs.org/guide/introduction",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/introduction",
+    "raw": "/raw/vuejs.org/guide/introduction.md"
+  },
+  {
+    "slug": "vuejs.org/guide/quick-start",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/quick-start",
+    "raw": "/raw/vuejs.org/guide/quick-start.md"
+  },
+  {
+    "slug": "vuejs.org/guide/reusability/composables",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/reusability/composables",
+    "raw": "/raw/vuejs.org/guide/reusability/composables.md"
+  },
+  {
+    "slug": "vuejs.org/guide/reusability/custom-directives",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/reusability/custom-directives",
+    "raw": "/raw/vuejs.org/guide/reusability/custom-directives.md"
+  },
+  {
+    "slug": "vuejs.org/guide/reusability/plugins",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/reusability/plugins",
+    "raw": "/raw/vuejs.org/guide/reusability/plugins.md"
+  },
+  {
+    "slug": "vuejs.org/guide/scaling-up/routing",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/scaling-up/routing",
+    "raw": "/raw/vuejs.org/guide/scaling-up/routing.md"
+  },
+  {
+    "slug": "vuejs.org/guide/scaling-up/sfc",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/scaling-up/sfc",
+    "raw": "/raw/vuejs.org/guide/scaling-up/sfc.md"
+  },
+  {
+    "slug": "vuejs.org/guide/scaling-up/ssr",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/scaling-up/ssr",
+    "raw": "/raw/vuejs.org/guide/scaling-up/ssr.md"
+  },
+  {
+    "slug": "vuejs.org/guide/scaling-up/state-management",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/scaling-up/state-management",
+    "raw": "/raw/vuejs.org/guide/scaling-up/state-management.md"
+  },
+  {
+    "slug": "vuejs.org/guide/scaling-up/testing",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/scaling-up/testing",
+    "raw": "/raw/vuejs.org/guide/scaling-up/testing.md"
+  },
+  {
+    "slug": "vuejs.org/guide/scaling-up/tooling",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/scaling-up/tooling",
+    "raw": "/raw/vuejs.org/guide/scaling-up/tooling.md"
+  },
+  {
+    "slug": "vuejs.org/guide/typescript/composition-api",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/typescript/composition-api",
+    "raw": "/raw/vuejs.org/guide/typescript/composition-api.md"
+  },
+  {
+    "slug": "vuejs.org/guide/typescript/options-api",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/typescript/options-api",
+    "raw": "/raw/vuejs.org/guide/typescript/options-api.md"
+  },
+  {
+    "slug": "vuejs.org/guide/typescript/overview",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/typescript/overview",
+    "raw": "/raw/vuejs.org/guide/typescript/overview.md"
   },
   {
     "slug": "www.google.com/index",
