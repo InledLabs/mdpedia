@@ -1,0 +1,590 @@
+[
+  {
+    "slug": "docs.astro.build/_index",
+    "title": "Index of docs.astro.build",
+    "path": "/doc/docs.astro.build/_index",
+    "raw": "/raw/docs.astro.build/_index.md"
+  },
+  {
+    "slug": "docs.astro.build/en/concepts/why-astro",
+    "title": "Why Astro?",
+    "path": "/doc/docs.astro.build/en/concepts/why-astro",
+    "raw": "/raw/docs.astro.build/en/concepts/why-astro.md"
+  },
+  {
+    "slug": "docs.astro.build/en/getting-started",
+    "title": "Getting started",
+    "path": "/doc/docs.astro.build/en/getting-started",
+    "raw": "/raw/docs.astro.build/en/getting-started.md"
+  },
+  {
+    "slug": "docs.astro.build/en/install-and-setup",
+    "title": "Install Astro",
+    "path": "/doc/docs.astro.build/en/install-and-setup",
+    "raw": "/raw/docs.astro.build/en/install-and-setup.md"
+  },
+  {
+    "slug": "es.react.dev/_index",
+    "title": "Knowledge Index for es.react.dev",
+    "path": "/doc/es.react.dev/_index",
+    "raw": "/raw/es.react.dev/_index.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/Activity",
+    "title": "<Activity> – React",
+    "path": "/doc/es.react.dev/reference/react/Activity",
+    "raw": "/raw/es.react.dev/reference/react/Activity.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/Children",
+    "title": "Children – React",
+    "path": "/doc/es.react.dev/reference/react/Children",
+    "raw": "/raw/es.react.dev/reference/react/Children.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/Component",
+    "title": "Component – React",
+    "path": "/doc/es.react.dev/reference/react/Component",
+    "raw": "/raw/es.react.dev/reference/react/Component.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/Fragment",
+    "title": "<Fragment> (<>...</>) – React",
+    "path": "/doc/es.react.dev/reference/react/Fragment",
+    "raw": "/raw/es.react.dev/reference/react/Fragment.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/Profiler",
+    "title": "<Profiler> – React",
+    "path": "/doc/es.react.dev/reference/react/Profiler",
+    "raw": "/raw/es.react.dev/reference/react/Profiler.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/PureComponent",
+    "title": "PureComponent – React",
+    "path": "/doc/es.react.dev/reference/react/PureComponent",
+    "raw": "/raw/es.react.dev/reference/react/PureComponent.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/StrictMode",
+    "title": "<StrictMode> – React",
+    "path": "/doc/es.react.dev/reference/react/StrictMode",
+    "raw": "/raw/es.react.dev/reference/react/StrictMode.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/Suspense",
+    "title": "<Suspense> – React",
+    "path": "/doc/es.react.dev/reference/react/Suspense",
+    "raw": "/raw/es.react.dev/reference/react/Suspense.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/ViewTransition",
+    "title": "<ViewTransition> – React",
+    "path": "/doc/es.react.dev/reference/react/ViewTransition",
+    "raw": "/raw/es.react.dev/reference/react/ViewTransition.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/act",
+    "title": "act – React",
+    "path": "/doc/es.react.dev/reference/react/act",
+    "raw": "/raw/es.react.dev/reference/react/act.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/addTransitionType",
+    "title": "unstable_addTransitionType – React",
+    "path": "/doc/es.react.dev/reference/react/addTransitionType",
+    "raw": "/raw/es.react.dev/reference/react/addTransitionType.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/apis",
+    "title": "APIs integradas de React – React",
+    "path": "/doc/es.react.dev/reference/react/apis",
+    "raw": "/raw/es.react.dev/reference/react/apis.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/cache",
+    "title": "cache – React",
+    "path": "/doc/es.react.dev/reference/react/cache",
+    "raw": "/raw/es.react.dev/reference/react/cache.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/captureOwnerStack",
+    "title": "captureOwnerStack – React",
+    "path": "/doc/es.react.dev/reference/react/captureOwnerStack",
+    "raw": "/raw/es.react.dev/reference/react/captureOwnerStack.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/cloneElement",
+    "title": "cloneElement – React",
+    "path": "/doc/es.react.dev/reference/react/cloneElement",
+    "raw": "/raw/es.react.dev/reference/react/cloneElement.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/components",
+    "title": "Componentes integrados de React – React",
+    "path": "/doc/es.react.dev/reference/react/components",
+    "raw": "/raw/es.react.dev/reference/react/components.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/createContext",
+    "title": "createContext – React",
+    "path": "/doc/es.react.dev/reference/react/createContext",
+    "raw": "/raw/es.react.dev/reference/react/createContext.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/createElement",
+    "title": "createElement – React",
+    "path": "/doc/es.react.dev/reference/react/createElement",
+    "raw": "/raw/es.react.dev/reference/react/createElement.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/createRef",
+    "title": "createRef – React",
+    "path": "/doc/es.react.dev/reference/react/createRef",
+    "raw": "/raw/es.react.dev/reference/react/createRef.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/experimental_taintObjectReference",
+    "title": "experimental_taintObjectReference – React",
+    "path": "/doc/es.react.dev/reference/react/experimental_taintObjectReference",
+    "raw": "/raw/es.react.dev/reference/react/experimental_taintObjectReference.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/experimental_taintUniqueValue",
+    "title": "experimental_taintUniqueValue – React",
+    "path": "/doc/es.react.dev/reference/react/experimental_taintUniqueValue",
+    "raw": "/raw/es.react.dev/reference/react/experimental_taintUniqueValue.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/forwardRef",
+    "title": "forwardRef – React",
+    "path": "/doc/es.react.dev/reference/react/forwardRef",
+    "raw": "/raw/es.react.dev/reference/react/forwardRef.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/hooks",
+    "title": "Hooks integrados en React  – React",
+    "path": "/doc/es.react.dev/reference/react/hooks",
+    "raw": "/raw/es.react.dev/reference/react/hooks.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/isValidElement",
+    "title": "isValidElement – React",
+    "path": "/doc/es.react.dev/reference/react/isValidElement",
+    "raw": "/raw/es.react.dev/reference/react/isValidElement.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/lazy",
+    "title": "lazy – React",
+    "path": "/doc/es.react.dev/reference/react/lazy",
+    "raw": "/raw/es.react.dev/reference/react/lazy.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/legacy",
+    "title": "APIs heredadas de React – React",
+    "path": "/doc/es.react.dev/reference/react/legacy",
+    "raw": "/raw/es.react.dev/reference/react/legacy.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/memo",
+    "title": "memo – React",
+    "path": "/doc/es.react.dev/reference/react/memo",
+    "raw": "/raw/es.react.dev/reference/react/memo.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/startTransition",
+    "title": "startTransition – React",
+    "path": "/doc/es.react.dev/reference/react/startTransition",
+    "raw": "/raw/es.react.dev/reference/react/startTransition.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/use",
+    "title": "use – React",
+    "path": "/doc/es.react.dev/reference/react/use",
+    "raw": "/raw/es.react.dev/reference/react/use.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useActionState",
+    "title": "useActionState – React",
+    "path": "/doc/es.react.dev/reference/react/useActionState",
+    "raw": "/raw/es.react.dev/reference/react/useActionState.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useCallback",
+    "title": "useCallback – React",
+    "path": "/doc/es.react.dev/reference/react/useCallback",
+    "raw": "/raw/es.react.dev/reference/react/useCallback.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useContext",
+    "title": "useContext – React",
+    "path": "/doc/es.react.dev/reference/react/useContext",
+    "raw": "/raw/es.react.dev/reference/react/useContext.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useDebugValue",
+    "title": "useDebugValue – React",
+    "path": "/doc/es.react.dev/reference/react/useDebugValue",
+    "raw": "/raw/es.react.dev/reference/react/useDebugValue.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useDeferredValue",
+    "title": "useDeferredValue – React",
+    "path": "/doc/es.react.dev/reference/react/useDeferredValue",
+    "raw": "/raw/es.react.dev/reference/react/useDeferredValue.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useEffect",
+    "title": "useEffect – React",
+    "path": "/doc/es.react.dev/reference/react/useEffect",
+    "raw": "/raw/es.react.dev/reference/react/useEffect.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useId",
+    "title": "useId – React",
+    "path": "/doc/es.react.dev/reference/react/useId",
+    "raw": "/raw/es.react.dev/reference/react/useId.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useImperativeHandle",
+    "title": "useImperativeHandle – React",
+    "path": "/doc/es.react.dev/reference/react/useImperativeHandle",
+    "raw": "/raw/es.react.dev/reference/react/useImperativeHandle.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useInsertionEffect",
+    "title": "useInsertionEffect – React",
+    "path": "/doc/es.react.dev/reference/react/useInsertionEffect",
+    "raw": "/raw/es.react.dev/reference/react/useInsertionEffect.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useLayoutEffect",
+    "title": "useLayoutEffect – React",
+    "path": "/doc/es.react.dev/reference/react/useLayoutEffect",
+    "raw": "/raw/es.react.dev/reference/react/useLayoutEffect.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useMemo",
+    "title": "useMemo – React",
+    "path": "/doc/es.react.dev/reference/react/useMemo",
+    "raw": "/raw/es.react.dev/reference/react/useMemo.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useOptimistic",
+    "title": "useOptimistic – React",
+    "path": "/doc/es.react.dev/reference/react/useOptimistic",
+    "raw": "/raw/es.react.dev/reference/react/useOptimistic.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useReducer",
+    "title": "useReducer – React",
+    "path": "/doc/es.react.dev/reference/react/useReducer",
+    "raw": "/raw/es.react.dev/reference/react/useReducer.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useRef",
+    "title": "useRef – React",
+    "path": "/doc/es.react.dev/reference/react/useRef",
+    "raw": "/raw/es.react.dev/reference/react/useRef.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useState",
+    "title": "useState – React",
+    "path": "/doc/es.react.dev/reference/react/useState",
+    "raw": "/raw/es.react.dev/reference/react/useState.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useSyncExternalStore",
+    "title": "useSyncExternalStore – React",
+    "path": "/doc/es.react.dev/reference/react/useSyncExternalStore",
+    "raw": "/raw/es.react.dev/reference/react/useSyncExternalStore.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react/useTransition",
+    "title": "useTransition – React",
+    "path": "/doc/es.react.dev/reference/react/useTransition",
+    "raw": "/raw/es.react.dev/reference/react/useTransition.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/client/createRoot",
+    "title": "createRoot – React",
+    "path": "/doc/es.react.dev/reference/react-dom/client/createRoot",
+    "raw": "/raw/es.react.dev/reference/react-dom/client/createRoot.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/client/hydrateRoot",
+    "title": "hydrateRoot – React",
+    "path": "/doc/es.react.dev/reference/react-dom/client/hydrateRoot",
+    "raw": "/raw/es.react.dev/reference/react-dom/client/hydrateRoot.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/client",
+    "title": "APIs del cliente React DOM – React",
+    "path": "/doc/es.react.dev/reference/react-dom/client",
+    "raw": "/raw/es.react.dev/reference/react-dom/client.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/components/common",
+    "title": "Componentes comunes (p. ej. <div>) – React",
+    "path": "/doc/es.react.dev/reference/react-dom/components/common",
+    "raw": "/raw/es.react.dev/reference/react-dom/components/common.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/components/form",
+    "title": "<form> – React",
+    "path": "/doc/es.react.dev/reference/react-dom/components/form",
+    "raw": "/raw/es.react.dev/reference/react-dom/components/form.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/components/input",
+    "title": "<input> – React",
+    "path": "/doc/es.react.dev/reference/react-dom/components/input",
+    "raw": "/raw/es.react.dev/reference/react-dom/components/input.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/components/link",
+    "title": "<link> – React",
+    "path": "/doc/es.react.dev/reference/react-dom/components/link",
+    "raw": "/raw/es.react.dev/reference/react-dom/components/link.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/components/meta",
+    "title": "<meta> – React",
+    "path": "/doc/es.react.dev/reference/react-dom/components/meta",
+    "raw": "/raw/es.react.dev/reference/react-dom/components/meta.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/components/option",
+    "title": "<option> – React",
+    "path": "/doc/es.react.dev/reference/react-dom/components/option",
+    "raw": "/raw/es.react.dev/reference/react-dom/components/option.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/components/progress",
+    "title": "<progress> – React",
+    "path": "/doc/es.react.dev/reference/react-dom/components/progress",
+    "raw": "/raw/es.react.dev/reference/react-dom/components/progress.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/components/script",
+    "title": "<script> – React",
+    "path": "/doc/es.react.dev/reference/react-dom/components/script",
+    "raw": "/raw/es.react.dev/reference/react-dom/components/script.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/components/select",
+    "title": "<select> – React",
+    "path": "/doc/es.react.dev/reference/react-dom/components/select",
+    "raw": "/raw/es.react.dev/reference/react-dom/components/select.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/components/style",
+    "title": "<style> – React",
+    "path": "/doc/es.react.dev/reference/react-dom/components/style",
+    "raw": "/raw/es.react.dev/reference/react-dom/components/style.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/components/textarea",
+    "title": "<textarea> – React",
+    "path": "/doc/es.react.dev/reference/react-dom/components/textarea",
+    "raw": "/raw/es.react.dev/reference/react-dom/components/textarea.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/components/title",
+    "title": "<title> – React",
+    "path": "/doc/es.react.dev/reference/react-dom/components/title",
+    "raw": "/raw/es.react.dev/reference/react-dom/components/title.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/components",
+    "title": "Componentes de React DOM – React",
+    "path": "/doc/es.react.dev/reference/react-dom/components",
+    "raw": "/raw/es.react.dev/reference/react-dom/components.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/createPortal",
+    "title": "createPortal – React",
+    "path": "/doc/es.react.dev/reference/react-dom/createPortal",
+    "raw": "/raw/es.react.dev/reference/react-dom/createPortal.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/flushSync",
+    "title": "flushSync – React",
+    "path": "/doc/es.react.dev/reference/react-dom/flushSync",
+    "raw": "/raw/es.react.dev/reference/react-dom/flushSync.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/hooks/useFormStatus",
+    "title": "useFormStatus – React",
+    "path": "/doc/es.react.dev/reference/react-dom/hooks/useFormStatus",
+    "raw": "/raw/es.react.dev/reference/react-dom/hooks/useFormStatus.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/hooks",
+    "title": "Hooks integrados de React DOM – React",
+    "path": "/doc/es.react.dev/reference/react-dom/hooks",
+    "raw": "/raw/es.react.dev/reference/react-dom/hooks.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/preconnect",
+    "title": "preconnect – React",
+    "path": "/doc/es.react.dev/reference/react-dom/preconnect",
+    "raw": "/raw/es.react.dev/reference/react-dom/preconnect.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/prefetchDNS",
+    "title": "prefetchDNS – React",
+    "path": "/doc/es.react.dev/reference/react-dom/prefetchDNS",
+    "raw": "/raw/es.react.dev/reference/react-dom/prefetchDNS.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/preinit",
+    "title": "preinit – React",
+    "path": "/doc/es.react.dev/reference/react-dom/preinit",
+    "raw": "/raw/es.react.dev/reference/react-dom/preinit.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/preinitModule",
+    "title": "preinitModule – React",
+    "path": "/doc/es.react.dev/reference/react-dom/preinitModule",
+    "raw": "/raw/es.react.dev/reference/react-dom/preinitModule.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/preload",
+    "title": "preload – React",
+    "path": "/doc/es.react.dev/reference/react-dom/preload",
+    "raw": "/raw/es.react.dev/reference/react-dom/preload.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/preloadModule",
+    "title": "preloadModule – React",
+    "path": "/doc/es.react.dev/reference/react-dom/preloadModule",
+    "raw": "/raw/es.react.dev/reference/react-dom/preloadModule.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/server/renderToPipeableStream",
+    "title": "renderToPipeableStream – React",
+    "path": "/doc/es.react.dev/reference/react-dom/server/renderToPipeableStream",
+    "raw": "/raw/es.react.dev/reference/react-dom/server/renderToPipeableStream.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/server/renderToReadableStream",
+    "title": "renderToReadableStream – React",
+    "path": "/doc/es.react.dev/reference/react-dom/server/renderToReadableStream",
+    "raw": "/raw/es.react.dev/reference/react-dom/server/renderToReadableStream.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/server/renderToStaticMarkup",
+    "title": "renderToStaticMarkup – React",
+    "path": "/doc/es.react.dev/reference/react-dom/server/renderToStaticMarkup",
+    "raw": "/raw/es.react.dev/reference/react-dom/server/renderToStaticMarkup.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/server/renderToString",
+    "title": "renderToString – React",
+    "path": "/doc/es.react.dev/reference/react-dom/server/renderToString",
+    "raw": "/raw/es.react.dev/reference/react-dom/server/renderToString.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/server",
+    "title": "APIs del servidor de React DOM – React",
+    "path": "/doc/es.react.dev/reference/react-dom/server",
+    "raw": "/raw/es.react.dev/reference/react-dom/server.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/static/prerender",
+    "title": "prerender – React",
+    "path": "/doc/es.react.dev/reference/react-dom/static/prerender",
+    "raw": "/raw/es.react.dev/reference/react-dom/static/prerender.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/static/prerenderToNodeStream",
+    "title": "prerenderToNodeStream – React",
+    "path": "/doc/es.react.dev/reference/react-dom/static/prerenderToNodeStream",
+    "raw": "/raw/es.react.dev/reference/react-dom/static/prerenderToNodeStream.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom/static",
+    "title": "Static React DOM APIs – React",
+    "path": "/doc/es.react.dev/reference/react-dom/static",
+    "raw": "/raw/es.react.dev/reference/react-dom/static.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react-dom",
+    "title": "React DOM APIs – React",
+    "path": "/doc/es.react.dev/reference/react-dom",
+    "raw": "/raw/es.react.dev/reference/react-dom.md"
+  },
+  {
+    "slug": "es.react.dev/reference/react",
+    "title": "Descripción General de la Referencia de React – React",
+    "path": "/doc/es.react.dev/reference/react",
+    "raw": "/raw/es.react.dev/reference/react.md"
+  },
+  {
+    "slug": "es.react.dev/reference/rsc/directives",
+    "title": "Directivas – React",
+    "path": "/doc/es.react.dev/reference/rsc/directives",
+    "raw": "/raw/es.react.dev/reference/rsc/directives.md"
+  },
+  {
+    "slug": "es.react.dev/reference/rsc/server-components",
+    "title": "Server Components – React",
+    "path": "/doc/es.react.dev/reference/rsc/server-components",
+    "raw": "/raw/es.react.dev/reference/rsc/server-components.md"
+  },
+  {
+    "slug": "es.react.dev/reference/rsc/server-functions",
+    "title": "Server Functions – React",
+    "path": "/doc/es.react.dev/reference/rsc/server-functions",
+    "raw": "/raw/es.react.dev/reference/rsc/server-functions.md"
+  },
+  {
+    "slug": "es.react.dev/reference/rsc/use-client",
+    "title": "Directiva 'use client' – React",
+    "path": "/doc/es.react.dev/reference/rsc/use-client",
+    "raw": "/raw/es.react.dev/reference/rsc/use-client.md"
+  },
+  {
+    "slug": "es.react.dev/reference/rsc/use-server",
+    "title": "Directiva 'use server' – React",
+    "path": "/doc/es.react.dev/reference/rsc/use-server",
+    "raw": "/raw/es.react.dev/reference/rsc/use-server.md"
+  },
+  {
+    "slug": "es.react.dev/reference/rules/components-and-hooks-must-be-pure",
+    "title": "Components and Hooks must be pure – React",
+    "path": "/doc/es.react.dev/reference/rules/components-and-hooks-must-be-pure",
+    "raw": "/raw/es.react.dev/reference/rules/components-and-hooks-must-be-pure.md"
+  },
+  {
+    "slug": "es.react.dev/reference/rules/react-calls-components-and-hooks",
+    "title": "React calls Components and Hooks – React",
+    "path": "/doc/es.react.dev/reference/rules/react-calls-components-and-hooks",
+    "raw": "/raw/es.react.dev/reference/rules/react-calls-components-and-hooks.md"
+  },
+  {
+    "slug": "es.react.dev/reference/rules/rules-of-hooks",
+    "title": "Reglas de los Hooks – React",
+    "path": "/doc/es.react.dev/reference/rules/rules-of-hooks",
+    "raw": "/raw/es.react.dev/reference/rules/rules-of-hooks.md"
+  },
+  {
+    "slug": "es.react.dev/reference/rules",
+    "title": "Rules of React – React",
+    "path": "/doc/es.react.dev/reference/rules",
+    "raw": "/raw/es.react.dev/reference/rules.md"
+  },
+  {
+    "slug": "es.react.dev/reference",
+    "title": "Descripción General de la Referencia de React – React",
+    "path": "/doc/es.react.dev/reference",
+    "raw": "/raw/es.react.dev/reference.md"
+  },
+  {
+    "slug": "www.google.com/index",
+    "title": "Google",
+    "path": "/doc/www.google.com/index",
+    "raw": "/raw/www.google.com/index.md"
+  }
+]
