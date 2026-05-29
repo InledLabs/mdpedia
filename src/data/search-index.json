@@ -834,6 +834,18 @@
     "raw": "/raw/libp2p.io/docs.md"
   },
   {
+    "slug": "vuejs.org/_index",
+    "title": "\"Knowledge Index for vuejs.org\"",
+    "path": "/doc/vuejs.org/_index",
+    "raw": "/raw/vuejs.org/_index.md"
+  },
+  {
+    "slug": "vuejs.org/guide/introduction.html",
+    "title": "\"Vue.js\"",
+    "path": "/doc/vuejs.org/guide/introduction.html",
+    "raw": "/raw/vuejs.org/guide/introduction.html.md"
+  },
+  {
     "slug": "www.google.com/index",
     "title": "Google",
     "path": "/doc/www.google.com/index",
