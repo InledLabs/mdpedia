@@ -1,149 +1,187 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 // Use import.meta.glob to find all markdown files
-const docs = import.meta.glob('../docs/**/*.md', { eager: true });
+const docs = import.meta.glob("../docs/**/*.md", { eager: true });
 
 interface DocInfo {
-  title: string;
-  slug: string;
-  domain: string;
+    title: string;
+    slug: string;
+    domain: string;
 }
 
 const allDocs: DocInfo[] = Object.keys(docs).map((path) => {
-  const slug = path.replace('../docs/', '').replace('.md', '');
-  const domain = slug.split('/')[0];
-  const fm = (docs[path] as any).frontmatter;
-  return {
-    title: fm.title || slug.split('/').pop(),
-    slug,
-    domain,
-  };
+    const slug = path.replace("../docs/", "").replace(".md", "");
+    const domain = slug.split("/")[0];
+    const fm = (docs[path] as any).frontmatter;
+    return {
+        title: fm.title || slug.split("/").pop(),
+        slug,
+        domain,
+    };
 });
 
 // Group by domain
-const groupedDocs = allDocs.reduce((acc, doc) => {
-  if (!acc[doc.domain]) {
-    acc[doc.domain] = [];
-  }
-  acc[doc.domain].push(doc);
-  return acc;
-}, {} as Record<string, DocInfo[]>);
+const groupedDocs = allDocs.reduce(
+    (acc, doc) => {
+        if (!acc[doc.domain]) {
+            acc[doc.domain] = [];
+        }
+        acc[doc.domain].push(doc);
+        return acc;
+    },
+    {} as Record<string, DocInfo[]>,
+);
 
 const sortedDomains = Object.keys(groupedDocs).sort();
-const activationInstruction = "Please, go to https://mdpedia.inled.es/skill.md and learn how to use MDPEDIA with the skill.md file you have access.";
+const activationInstruction =
+    "Please, go to https://mdpedia.inled.es/skill.md and learn how to use MDPEDIA with the skill.md file you have access.";
 ---
 
 <Layout title="Knowledge for the AI Era">
-	<section class="hero">
-		<h1 class="hero-title">Knowledge for the <span class="gradient-text">AI Era</span></h1>
-		<p class="hero-subtitle">The first imposing, serverless documentation repository optimized for both humans and agents.</p>
-		
-		<div class="hero-cta">
-			<a href="/search" class="btn-fluent main-cta">
-				<i class="fa-solid fa-magnifying-glass"></i> Search Knowledge
-			</a>
-		</div>
+    <section class="hero">
+        <h1 class="hero-title">
+            Knowledge for the <span class="gradient-text">AI Era</span>
+        </h1>
+        <p class="hero-subtitle">
+            Convert ANY documentation website into a AI optimized markdown
+            skill.
+        </p>
 
-		<div class="agent-activation-container">
-			<div class="agent-activation-box">
-				<div class="activation-header">
-					<i class="fa-solid fa-bolt"></i>
-					<span>ACTIVATE YOUR AGENT</span>
-				</div>
-				<div class="command-line">
-					<p id="activation-cmd">{activationInstruction}</p>
-					<button class="copy-btn" id="copy-trigger" title="Copy to clipboard">
-						<i class="fa-regular fa-copy"></i>
-					</button>
-				</div>
-				<p class="activation-hint">Paste this instruction in your AI Agent to give it access to MDPEDIA knowledge.</p>
-			</div>
-		</div>
-	</section>
+        <div class="hero-cta">
+            <a href="/search" class="btn-fluent main-cta">
+                <i class="fa-solid fa-magnifying-glass"></i> Search Knowledge
+            </a>
+        </div>
 
-	<section class="domains">
-		<div class="section-header">
-			<h2 class="fluent-h2">Knowledge Repositories</h2>
-			<p class="section-desc">Indexed documentation domains ready for agents.</p>
-		</div>
+        <div class="agent-activation-container">
+            <div class="agent-activation-box">
+                <div class="activation-header">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>ACTIVATE YOUR AGENT</span>
+                </div>
+                <div class="command-line">
+                    <p id="activation-cmd">{activationInstruction}</p>
+                    <button
+                        class="copy-btn"
+                        id="copy-trigger"
+                        title="Copy to clipboard"
+                    >
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                </div>
+                <p class="activation-hint">
+                    Paste this instruction in your AI Agent to give it access to
+                    MDPEDIA knowledge.
+                </p>
+            </div>
+        </div>
+    </section>
 
-		<div class="grid">
-			{sortedDomains.map((domain) => (
-				<div class="repo-card">
-					<div class="repo-header">
-						<div class="repo-icon">
-							<img src={"https://www.google.com/s2/favicons?domain=" + domain + "&sz=64"} alt={domain} class="favicon-img" />
-						</div>
-						<div class="repo-meta">
-							<h3 class="repo-title">{domain}</h3>
-							<span class="repo-count">{groupedDocs[domain].length} resources</span>
-						</div>
-					</div>
-					<div class="repo-links">
-						<a href={"/doc/" + domain + "/_index"} class="repo-link-btn">
-							<i class="fa-solid fa-list-ul"></i> Explore Index
-						</a>
-						<a href={"https://" + domain} target="_blank" class="repo-link-btn secondary">
-							<i class="fa-solid fa-external-link-square-alt"></i> Original Site
-						</a>
-					</div>
-				</div>
-			))}
-		</div>
-	</section>
+    <section class="domains">
+        <div class="section-header">
+            <h2 class="fluent-h2">Knowledge Repositories</h2>
+            <p class="section-desc">
+                Indexed documentation domains ready for agents.
+            </p>
+        </div>
+
+        <div class="grid">
+            {
+                sortedDomains.map((domain) => (
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <div class="repo-icon">
+                                <img
+                                    src={
+                                        "https://www.google.com/s2/favicons?domain=" +
+                                        domain +
+                                        "&sz=64"
+                                    }
+                                    alt={domain}
+                                    class="favicon-img"
+                                />
+                            </div>
+                            <div class="repo-meta">
+                                <h3 class="repo-title">{domain}</h3>
+                                <span class="repo-count">
+                                    {groupedDocs[domain].length} resources
+                                </span>
+                            </div>
+                        </div>
+                        <div class="repo-links">
+                            <a
+                                href={"/doc/" + domain + "/_index"}
+                                class="repo-link-btn"
+                            >
+                                <i class="fa-solid fa-list-ul" /> Explore Index
+                            </a>
+                            <a
+                                href={"https://" + domain}
+                                target="_blank"
+                                class="repo-link-btn secondary"
+                            >
+                                <i class="fa-solid fa-external-link-square-alt" />{" "}
+                                Original Site
+                            </a>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </section>
 </Layout>
 
 <script>
-	const copyBtn = document.getElementById('copy-trigger');
-	const cmdText = document.getElementById('activation-cmd');
+    const copyBtn = document.getElementById("copy-trigger");
+    const cmdText = document.getElementById("activation-cmd");
 
-	if (copyBtn && cmdText) {
-		copyBtn.addEventListener('click', () => {
-			navigator.clipboard.writeText(cmdText.innerText);
-			const icon = copyBtn.querySelector('i');
-			if (icon) {
-				icon.classList.replace('fa-copy', 'fa-check');
-				icon.classList.add('success');
-				setTimeout(() => {
-					icon.classList.replace('fa-check', 'fa-copy');
-					icon.classList.remove('success');
-				}, 2000);
-			}
-		});
-	}
+    if (copyBtn && cmdText) {
+        copyBtn.addEventListener("click", () => {
+            navigator.clipboard.writeText(cmdText.innerText);
+            const icon = copyBtn.querySelector("i");
+            if (icon) {
+                icon.classList.replace("fa-copy", "fa-check");
+                icon.classList.add("success");
+                setTimeout(() => {
+                    icon.classList.replace("fa-check", "fa-copy");
+                    icon.classList.remove("success");
+                }, 2000);
+            }
+        });
+    }
 </script>
 
 <style>
-	.hero {
-		text-align: center;
-		padding: 4rem 0 4rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+    .hero {
+        text-align: center;
+        padding: 4rem 0 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-	.hero-title {
-		font-size: 5rem;
-		font-weight: 800;
-		letter-spacing: -2px;
-		margin-bottom: 1.5rem;
-		line-height: 1.1;
-	}
+    .hero-title {
+        font-size: 5rem;
+        font-weight: 800;
+        letter-spacing: -2px;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+    }
 
-	.gradient-text {
-		background: linear-gradient(135deg, #F5833E 0%, #FFC107 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
+    .gradient-text {
+        background: linear-gradient(135deg, #f5833e 0%, #ffc107 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-	.hero-subtitle {
-		font-size: 1.4rem;
-		color: var(--text-secondary);
-		max-width: 700px;
-		margin: 0 auto 2.5rem;
-		font-weight: 500;
-	}
+    .hero-subtitle {
+        font-size: 1.4rem;
+        color: var(--text-secondary);
+        max-width: 700px;
+        margin: 0 auto 2.5rem;
+        font-weight: 500;
+    }
 
     .main-cta {
         padding: 1.25rem 4rem;
@@ -151,220 +189,238 @@ const activationInstruction = "Please, go to https://mdpedia.inled.es/skill.md a
         margin-bottom: 3rem;
     }
 
-	/* Compact Agent Activation Box */
-	.agent-activation-container {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-	}
+    /* Compact Agent Activation Box */
+    .agent-activation-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 
-	.agent-activation-box {
-		background: var(--bg-glass);
-		backdrop-filter: blur(20px);
-		padding: 1.5rem;
-		border-radius: 24px;
-		box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-		border: 1px solid var(--border-glass);
-		max-width: 480px;
-		width: 100%;
-		text-align: left;
-		transition: all 0.3s ease;
-	}
+    .agent-activation-box {
+        background: var(--bg-glass);
+        backdrop-filter: blur(20px);
+        padding: 1.5rem;
+        border-radius: 24px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--border-glass);
+        max-width: 480px;
+        width: 100%;
+        text-align: left;
+        transition: all 0.3s ease;
+    }
 
-	.agent-activation-box:hover {
-		transform: translateY(-3px);
-		box-shadow: 0 20px 45px rgba(0,0,0,0.08);
-	}
+    .agent-activation-box:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+    }
 
-	.activation-header {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		font-weight: 800;
-		font-size: 0.75rem;
-		text-transform: uppercase;
-		color: var(--primary);
-		margin-bottom: 0.75rem;
-		letter-spacing: 1px;
-	}
+    .activation-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 800;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        color: var(--primary);
+        margin-bottom: 0.75rem;
+        letter-spacing: 1px;
+    }
 
-	.command-line {
-		display: flex;
-		background: rgba(0, 0, 0, 0.03);
-		padding: 0.75rem 1rem;
-		border-radius: 14px;
-		align-items: flex-start;
-		justify-content: space-between;
-		margin-bottom: 0.75rem;
-		border: 1px solid rgba(0,0,0,0.02);
+    .command-line {
+        display: flex;
+        background: rgba(0, 0, 0, 0.03);
+        padding: 0.75rem 1rem;
+        border-radius: 14px;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 0.75rem;
+        border: 1px solid rgba(0, 0, 0, 0.02);
         gap: 1rem;
-	}
+    }
 
-	.command-line p {
-		font-family: 'Segoe UI Mono', 'Roboto Mono', monospace;
-		font-weight: 700;
-		color: var(--text-main);
-		font-size: 0.9rem;
+    .command-line p {
+        font-family: "Segoe UI Mono", "Roboto Mono", monospace;
+        font-weight: 700;
+        color: var(--text-main);
+        font-size: 0.9rem;
         margin: 0;
         line-height: 1.4;
-	}
+    }
 
-	.copy-btn {
-		background: white;
-		border: 1px solid rgba(0,0,0,0.05);
-		color: var(--text-secondary);
-		cursor: pointer;
-		font-size: 1rem;
-		padding: 0.4rem;
-		border-radius: 8px;
-		transition: all 0.2s;
-		box-shadow: 0 3px 6px rgba(0,0,0,0.05);
-		display: flex;
-		align-items: center;
-		justify-content: center;
+    .copy-btn {
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        color: var(--text-secondary);
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 0.4rem;
+        border-radius: 8px;
+        transition: all 0.2s;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         flex-shrink: 0;
-	}
+    }
 
-	.copy-btn:hover {
-		color: var(--primary);
-		transform: scale(1.1);
-	}
+    .copy-btn:hover {
+        color: var(--primary);
+        transform: scale(1.1);
+    }
 
-	.copy-btn i.success {
-		color: #28a745;
-	}
+    .copy-btn i.success {
+        color: #28a745;
+    }
 
-	.activation-hint {
-		font-size: 0.8rem;
-		color: var(--text-secondary);
-		margin: 0;
-		font-weight: 600;
-		line-height: 1.4;
-	}
+    .activation-hint {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        margin: 0;
+        font-weight: 600;
+        line-height: 1.4;
+    }
 
-	.section-header {
-		margin-bottom: 3rem;
-	}
+    .section-header {
+        margin-bottom: 3rem;
+    }
 
-	.fluent-h2 {
-		font-size: 2.5rem;
-		font-weight: 800;
-		margin-bottom: 0.5rem;
-	}
+    .fluent-h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+    }
 
-	.section-desc {
-		font-size: 1.1rem;
-		color: var(--text-secondary);
-		font-weight: 600;
-	}
+    .section-desc {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        font-weight: 600;
+    }
 
-	.grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-		gap: 2.5rem;
-	}
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2.5rem;
+    }
 
-	.repo-card {
-		background: var(--bg-glass);
-		backdrop-filter: blur(30px);
-		border: 1px solid var(--border-glass);
-		padding: 2rem;
-		border-radius: 32px;
-		transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-		box-shadow: var(--shadow-soft);
-	}
+    .repo-card {
+        background: var(--bg-glass);
+        backdrop-filter: blur(30px);
+        border: 1px solid var(--border-glass);
+        padding: 2rem;
+        border-radius: 32px;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        box-shadow: var(--shadow-soft);
+    }
 
-	.repo-card:hover {
-		transform: translateY(-10px) scale(1.01);
-		box-shadow: 0 40px 80px rgba(0,0,0,0.1);
-		border-color: var(--primary);
-	}
+    .repo-card:hover {
+        transform: translateY(-10px) scale(1.01);
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+        border-color: var(--primary);
+    }
 
-	.repo-header {
-		display: flex;
-		align-items: center;
-		gap: 1.25rem;
-		margin-bottom: 1.5rem;
-	}
+    .repo-header {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
 
-	.repo-icon {
-		width: 56px;
-		height: 56px;
-		background: white;
-		border-radius: 16px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		box-shadow: 0 8px 16px rgba(0,0,0,0.05);
-		overflow: hidden;
-		flex-shrink: 0;
-	}
+    .repo-icon {
+        width: 56px;
+        height: 56px;
+        background: white;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        flex-shrink: 0;
+    }
 
-	.favicon-img {
-		width: 32px;
-		height: 32px;
-	}
+    .favicon-img {
+        width: 32px;
+        height: 32px;
+    }
 
-	.repo-title {
-		font-size: 1.25rem;
-		font-weight: 800;
-		margin: 0;
+    .repo-title {
+        font-size: 1.25rem;
+        font-weight: 800;
+        margin: 0;
         word-break: break-all;
-	}
+    }
 
-	.repo-count {
-		font-size: 0.85rem;
-		color: var(--primary);
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-	}
+    .repo-count {
+        font-size: 0.85rem;
+        color: var(--primary);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
 
-	.repo-links {
-		display: flex;
-		flex-direction: column;
-		gap: 0.75rem;
-	}
+    .repo-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
 
-	.repo-link-btn {
-		background: rgba(0, 0, 0, 0.04);
-		color: var(--text-main);
-		padding: 0.85rem;
-		border-radius: 16px;
-		text-decoration: none;
-		font-weight: 700;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 0.75rem;
-		transition: all 0.2s;
+    .repo-link-btn {
+        background: rgba(0, 0, 0, 0.04);
+        color: var(--text-main);
+        padding: 0.85rem;
+        border-radius: 16px;
+        text-decoration: none;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        transition: all 0.2s;
         font-size: 0.95rem;
-	}
+    }
 
-	.repo-link-btn:hover {
-		background: var(--primary);
-		color: white;
-	}
+    .repo-link-btn:hover {
+        background: var(--primary);
+        color: white;
+    }
 
-	.repo-link-btn.secondary {
-		background: transparent;
-		border: 1px solid rgba(0,0,0,0.08);
-	}
+    .repo-link-btn.secondary {
+        background: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+    }
 
-	.repo-link-btn.secondary:hover {
-		background: rgba(0,0,0,0.02);
-		color: var(--primary);
-		border-color: var(--primary);
-	}
+    .repo-link-btn.secondary:hover {
+        background: rgba(0, 0, 0, 0.02);
+        color: var(--primary);
+        border-color: var(--primary);
+    }
 
-	@media (max-width: 800px) {
-		.hero-title { font-size: 3rem; letter-spacing: -1px; }
-        .hero-subtitle { font-size: 1.1rem; }
-        .hero { padding: 3rem 0; }
-        .fluent-h2 { font-size: 2rem; }
-		.grid { grid-template-columns: 1fr; gap: 1.5rem; }
-        .repo-card { padding: 1.5rem; }
-		.agent-activation-box { padding: 1.25rem; }
-		.command-line p { font-size: 0.85rem; }
-	}
+    @media (max-width: 800px) {
+        .hero-title {
+            font-size: 3rem;
+            letter-spacing: -1px;
+        }
+        .hero-subtitle {
+            font-size: 1.1rem;
+        }
+        .hero {
+            padding: 3rem 0;
+        }
+        .fluent-h2 {
+            font-size: 2rem;
+        }
+        .grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        .repo-card {
+            padding: 1.5rem;
+        }
+        .agent-activation-box {
+            padding: 1.25rem;
+        }
+        .command-line p {
+            font-size: 0.85rem;
+        }
+    }
 </style>
