@@ -62,91 +62,173 @@ const githubReindexUrl = REPO_URL + "/issues/new?title=" + encodeURIComponent("r
 ---
 
 <Layout title={q ? ("Search: " + q) : "Search"}>
-	<div class="search-header">
-		<a href="/" class="back-link">
-			<i class="fa-solid fa-arrow-left-long"></i> Back to home
-		</a>
-		<h1 class="fluent-h1">Results for "{q}"</h1>
-	</div>
+        <div class="search-page-container">
+            <div class="search-header">
+                    <a href="/" class="back-link">
+                            <i class="fa-solid fa-arrow-left-long"></i> Back to home
+                    </a>
+                    <h1 class="fluent-h1">{q ? ("Results for \"" + q + "\"") : "Knowledge Search"}</h1>
+            </div>
 
-	{results.length > 0 ? (
-        <div class="search-results-wrapper">
-            <div class="results-container">
-                <div class="card-grid">
-                    {results.map(res => (
-                        <a href={res.path} class="doc-card">
-                            <div class="card-icon">
-                                <i class={res.slug.includes('_index') ? "fa-solid fa-book" : "fa-solid fa-file-lines"}></i>
+            <div class="search-form-container">
+                <form action="/search" method="GET" class="search-bar-form">
+                    <div class="search-input-wrapper">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input 
+                            type="text" 
+                            name="q" 
+                            placeholder="Search documentation, domains, or keywords..." 
+                            value={q || ''}
+                            class="search-input"
+                            autofocus
+                        />
+                    </div>
+                    <button type="submit" class="btn-fluent search-btn">Search</button>
+                </form>
+            </div>
+
+            {q && (
+                <div class="results-section">
+                    {results.length > 0 ? (
+                    <div class="search-results-wrapper">
+                        <div class="results-container">
+                            <div class="card-grid">
+                                {results.map(res => (
+                                    <a href={res.path} class="doc-card">
+                                        <div class="card-icon">
+                                            <i class={res.slug.includes('_index') ? "fa-solid fa-book" : "fa-solid fa-file-lines"}></i>
+                                        </div>
+                                        <div class="card-content">
+                                            <span class="doc-title">{res.title}</span>
+                                            <span class="doc-slug">{res.slug}</span>
+                                        </div>
+                                    </a>
+                                ))}
                             </div>
-                            <div class="card-content">
-                                <span class="doc-title">{res.title}</span>
-                                <span class="doc-slug">{res.slug}</span>
+                        </div>
+                        
+                        <div class="reindex-tip">
+                            <p>Not seeing what you expected? <a href={githubReindexUrl} target="_blank">Force a reindex on GitHub</a></p>
+                        </div>
+                    </div>
+                    ) : (
+                            <div class="no-results">
+                                    <div class="empty-state">
+                                            <i class="fa-solid fa-magnifying-glass empty-icon"></i>
+                                            <h2>No results found</h2>
+                                            <p>We couldn't find any documentation matching your search.</p>
+                                    </div>
+
+                                    <div class="index-request-card">
+                                            <div class="request-content">
+                                                    <div class="request-icon">
+                                                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                                                    </div>
+                                                    <div class="request-text">
+                                                            <h3>Want to index this resource?</h3>
+                                                            <p>You can request immediate indexing of this URL via our automated GitHub system.</p>
+                                                    </div>
+                                            </div>
+                                            <div class="request-action">
+                                                    <a href={githubIssueUrl} class="btn-fluent" target="_blank">
+                                                            <i class="fa-brands fa-github"></i> Request Indexing
+                                                    </a>
+                                            </div>
+                                    </div>
                             </div>
-                        </a>
-                    ))}
+                    )}
                 </div>
-            </div>
-            
-            <div class="reindex-tip">
-                <p>Not seeing what you expected? <a href={githubReindexUrl} target="_blank">Force a reindex on GitHub</a></p>
-            </div>
+            )}
         </div>
-	) : (
-		<div class="no-results">
-			<div class="empty-state">
-				<i class="fa-solid fa-magnifying-glass empty-icon"></i>
-				<h2>No results found</h2>
-				<p>We couldn't find any documentation matching your search.</p>
-			</div>
-
-			<div class="index-request-card">
-				<div class="request-content">
-					<div class="request-icon">
-						<i class="fa-solid fa-cloud-arrow-up"></i>
-					</div>
-					<div class="request-text">
-						<h3>Want to index this resource?</h3>
-						<p>You can request immediate indexing of this URL via our automated GitHub system.</p>
-					</div>
-				</div>
-				<div class="request-action">
-					<a href={githubIssueUrl} class="btn-fluent" target="_blank">
-						<i class="fa-brands fa-github"></i> Request Indexing
-					</a>
-				</div>
-			</div>
-		</div>
-	)}
 </Layout>
 
 <style is:global>
-	.search-header {
-		margin-bottom: 3.5rem;
-	}
+        .search-page-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-	.back-link {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		margin-bottom: 1.5rem;
-		font-size: 0.95rem;
-		color: var(--text-secondary);
-		font-weight: 600;
-	}
+        .search-header {
+                margin-bottom: 2.5rem;
+        }
 
-	.fluent-h1 {
-		font-size: 2.75rem;
-		margin: 0;
-		color: var(--text-main);
-		font-weight: 800;
-		letter-spacing: -0.5px;
-	}
+        .back-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-bottom: 1.5rem;
+                font-size: 0.95rem;
+                color: var(--text-secondary);
+                font-weight: 600;
+        }
 
-	.no-results {
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-	}
+        .fluent-h1 {
+                font-size: 2.75rem;
+                margin: 0;
+                color: var(--text-main);
+                font-weight: 800;
+                letter-spacing: -0.5px;
+        }
+
+        /* New Search Form Styles */
+        .search-form-container {
+            margin-bottom: 4rem;
+        }
+
+        .search-bar-form {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .search-input-wrapper {
+            flex-grow: 1;
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            border: 1px solid rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+        }
+
+        .search-input-wrapper:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px var(--primary-glow);
+            transform: translateY(-2px);
+        }
+
+        .search-icon {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-right: 1.25rem;
+        }
+
+        .search-input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            padding: 1.25rem 0;
+            font-size: 1.15rem;
+            font-family: inherit;
+            color: var(--text-main);
+            outline: none;
+            font-weight: 500;
+        }
+
+        .search-btn {
+            padding: 0 2.5rem;
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        .no-results {
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+        }
 
     .reindex-tip {
         margin-top: 3rem;
@@ -165,142 +247,148 @@ const githubReindexUrl = REPO_URL + "/issues/new?title=" + encodeURIComponent("r
     }
 
     /* Reuse Grid Styles */
-	.card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		gap: 1.5rem;
-	}
+        .card-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 1.5rem;
+        }
 
-	.doc-card {
-		background: rgba(255, 255, 255, 0.6);
-		padding: 1.5rem;
-		border-radius: 20px;
-		border: 1px solid rgba(0, 0, 0, 0.05);
-		text-decoration: none;
-		display: flex;
-		align-items: center;
-		gap: 1.25rem;
-		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
-	}
+        .doc-card {
+                background: rgba(255, 255, 255, 0.6);
+                padding: 1.5rem;
+                border-radius: 20px;
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 1.25rem;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+        }
 
-	.doc-card:hover {
-		transform: translateY(-6px);
-		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-		border-color: var(--primary);
-		background: white;
-	}
+        .doc-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+                border-color: var(--primary);
+                background: white;
+        }
 
-	.card-icon {
-		width: 48px;
-		height: 48px;
-		background: rgba(245, 131, 62, 0.1);
-		border-radius: 12px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: var(--primary);
-		font-size: 1.25rem;
-	}
+        .card-icon {
+                width: 48px;
+                height: 48px;
+                background: rgba(245, 131, 62, 0.1);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--primary);
+                font-size: 1.25rem;
+        }
 
-	.card-content {
-		display: flex;
-		flex-direction: column;
-		gap: 0.25rem;
-		overflow: hidden;
-	}
+        .card-content {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+                overflow: hidden;
+        }
 
-	.doc-title {
-		font-weight: 700;
-		font-size: 1.1rem;
-		color: var(--text-main);
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
+        .doc-title {
+                font-weight: 700;
+                font-size: 1.1rem;
+                color: var(--text-main);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+        }
 
-	.doc-slug {
-		font-size: 0.8rem;
-		color: var(--text-secondary);
-		font-family: 'Segoe UI Mono', 'Roboto Mono', monospace;
-		word-break: break-all;
-		opacity: 0.7;
-	}
+        .doc-slug {
+                font-size: 0.8rem;
+                color: var(--text-secondary);
+                font-family: 'Segoe UI Mono', 'Roboto Mono', monospace;
+                word-break: break-all;
+                opacity: 0.7;
+        }
 
-	.empty-state {
-		text-align: center;
-		padding: 4rem 0;
-		color: var(--text-secondary);
-		background: rgba(0,0,0,0.02);
-		border-radius: 24px;
-		border: 1px dashed rgba(0,0,0,0.1);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1rem;
-	}
+        .empty-state {
+                text-align: center;
+                padding: 4rem 0;
+                color: var(--text-secondary);
+                background: rgba(0,0,0,0.02);
+                border-radius: 24px;
+                border: 1px dashed rgba(0,0,0,0.1);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+        }
 
-	.empty-icon {
-		font-size: 3rem;
-		opacity: 0.3;
-	}
+        .empty-icon {
+                font-size: 3rem;
+                opacity: 0.3;
+        }
 
-	.index-request-card {
-		background: rgba(255, 255, 255, 0.5);
-		padding: 3rem;
-		border-radius: 32px;
-		border: 1px solid var(--glass-border);
-		box-shadow: var(--shadow-fluent);
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 2rem;
-		flex-wrap: wrap;
-	}
+        .index-request-card {
+                background: rgba(255, 255, 255, 0.5);
+                padding: 3rem;
+                border-radius: 32px;
+                border: 1px solid var(--glass-border);
+                box-shadow: var(--shadow-fluent);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 2rem;
+                flex-wrap: wrap;
+        }
 
-	.request-content {
-		display: flex;
-		align-items: center;
-		gap: 2rem;
-		flex: 1;
-		min-width: 300px;
-	}
+        .request-content {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                flex: 1;
+                min-width: 300px;
+        }
 
-	.request-icon {
-		width: 72px;
-		height: 72px;
-		background: rgba(245, 131, 62, 0.1);
-		color: var(--primary);
-		border-radius: 20px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 2rem;
-	}
+        .request-icon {
+                width: 72px;
+                height: 72px;
+                background: rgba(245, 131, 62, 0.1);
+                color: var(--primary);
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+        }
 
-	.request-text h3 {
-		margin: 0;
-		font-size: 1.75rem;
-		font-weight: 800;
-		color: var(--text-main);
-	}
+        .request-text h3 {
+                margin: 0;
+                font-size: 1.75rem;
+                font-weight: 800;
+                color: var(--text-main);
+        }
 
-	.request-text p {
-		margin: 0.5rem 0 0;
-		color: var(--text-secondary);
-		font-size: 1.1rem;
-		line-height: 1.6;
-	}
+        .request-text p {
+                margin: 0.5rem 0 0;
+                color: var(--text-secondary);
+                font-size: 1.1rem;
+                line-height: 1.6;
+        }
 
-	@media (max-width: 800px) {
-		.index-request-card {
-			flex-direction: column;
-			text-align: center;
-			padding: 2rem;
-		}
-		.request-content {
-			flex-direction: column;
-			min-width: unset;
-		}
-	}
+        @media (max-width: 800px) {
+                .search-bar-form {
+                    flex-direction: column;
+                }
+                .search-btn {
+                    padding: 1.25rem;
+                }
+                .index-request-card {
+                        flex-direction: column;
+                        text-align: center;
+                        padding: 2rem;
+                }
+                .request-content {
+                        flex-direction: column;
+                        min-width: unset;
+                }
+        }
 </style>
