@@ -1,9 +1,9 @@
 # <img src="https://hosted.inled.es/mdpedia.png" width="40" height="40" align="center" /> MDPEDIA
 
-### *Knowledge for the AI Era*
+### *Knowledge for the AI Era*  
 
-**MDPEDIA** is an imposing, serverless documentation repository designed to be the bridge between human knowledge and AI agents. Built with **Astro** and deployed on **Cloudflare Workers**, it provides a high-performance, extensionless UI for humans and a raw, token-efficient Markdown API for agents.
 
+**MDPEDIA** is the evolution of [skills.sh](https://skills.sh) were no humans make the documentation, they only request to convert any traditional documentation website into a set of markdown skills for AI Agents.
 ---
 
 ## ⚙️ How it Works
