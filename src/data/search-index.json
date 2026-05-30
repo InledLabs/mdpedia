@@ -7,7 +7,7 @@
   },
   {
     "slug": "docs.astro.build/en/concepts/why-astro",
-    "title": "Why Astro?",
+    "title": "\"Why Astro?\"",
     "path": "/doc/docs.astro.build/en/concepts/why-astro",
     "raw": "/raw/docs.astro.build/en/concepts/why-astro.md"
   },
@@ -289,7 +289,7 @@
   },
   {
     "slug": "es.react.dev/reference/react/useState",
-    "title": "useState – React",
+    "title": "\"useState\"",
     "path": "/doc/es.react.dev/reference/react/useState",
     "raw": "/raw/es.react.dev/reference/react/useState.md"
   },
@@ -778,6 +778,222 @@
     "title": "\"Legacy Documentation | GNOME JavaScript\"",
     "path": "/doc/gjs.guide/extensions/upgrading/legacy-documentation",
     "raw": "/raw/gjs.guide/extensions/upgrading/legacy-documentation.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gio/actions-and-menus",
+    "title": "\"Actions and Menus | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gio/actions-and-menus",
+    "raw": "/raw/gjs.guide/guides/gio/actions-and-menus.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gio/dbus",
+    "title": "\"D-Bus | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gio/dbus",
+    "raw": "/raw/gjs.guide/guides/gio/dbus.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gio/file-operations",
+    "title": "\"File Operations | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gio/file-operations",
+    "raw": "/raw/gjs.guide/guides/gio/file-operations.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gio/list-models",
+    "title": "\"List Models | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gio/list-models",
+    "raw": "/raw/gjs.guide/guides/gio/list-models.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gio/subprocesses",
+    "title": "\"Subprocesses | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gio/subprocesses",
+    "raw": "/raw/gjs.guide/guides/gio/subprocesses.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gjs/asynchronous-programming",
+    "title": "\"Asynchronous Programming | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gjs/asynchronous-programming",
+    "raw": "/raw/gjs.guide/guides/gjs/asynchronous-programming.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gjs/intro",
+    "title": "\"Intro | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gjs/intro",
+    "raw": "/raw/gjs.guide/guides/gjs/intro.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gjs/memory-management",
+    "title": "\"Tips On Memory Management | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gjs/memory-management",
+    "raw": "/raw/gjs.guide/guides/gjs/memory-management.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gjs/style-guide",
+    "title": "\"Style Guide | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gjs/style-guide",
+    "raw": "/raw/gjs.guide/guides/gjs/style-guide.md"
+  },
+  {
+    "slug": "gjs.guide/guides/glib/gvariant",
+    "title": "\"GVariant | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/glib/gvariant",
+    "raw": "/raw/gjs.guide/guides/glib/gvariant.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gobject/advanced",
+    "title": "\"Advanced | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gobject/advanced",
+    "raw": "/raw/gjs.guide/guides/gobject/advanced.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gobject/basics",
+    "title": "\"The Basics | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gobject/basics",
+    "raw": "/raw/gjs.guide/guides/gobject/basics.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gobject/gtype",
+    "title": "\"GType | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gobject/gtype",
+    "raw": "/raw/gjs.guide/guides/gobject/gtype.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gobject/gvalue",
+    "title": "\"GValue | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gobject/gvalue",
+    "raw": "/raw/gjs.guide/guides/gobject/gvalue.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gobject/interfaces",
+    "title": "\"Interfaces | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gobject/interfaces",
+    "raw": "/raw/gjs.guide/guides/gobject/interfaces.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gobject/subclassing",
+    "title": "\"Subclasses | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gobject/subclassing",
+    "raw": "/raw/gjs.guide/guides/gobject/subclassing.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/01-basics",
+    "title": "\"The Basics of GTK | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/01-basics",
+    "raw": "/raw/gjs.guide/guides/gtk/3/01-basics.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/02-widgets",
+    "title": "\"Widgets and Other GTK Objects\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/02-widgets",
+    "raw": "/raw/gjs.guide/guides/gtk/3/02-widgets.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/03-installing",
+    "title": "\"Installing GJS and Running The Examples\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/03-installing",
+    "raw": "/raw/gjs.guide/guides/gtk/3/03-installing.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/04-running-gtk",
+    "title": "\"Running GTK in GJS | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/04-running-gtk",
+    "raw": "/raw/gjs.guide/guides/gtk/3/04-running-gtk.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/05-layouts",
+    "title": "\"Layouts in GTK | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/05-layouts",
+    "raw": "/raw/gjs.guide/guides/gtk/3/05-layouts.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/06-text",
+    "title": "\"Displaying Text | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/06-text",
+    "raw": "/raw/gjs.guide/guides/gtk/3/06-text.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/07-buttons",
+    "title": "\"Buttons | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/07-buttons",
+    "raw": "/raw/gjs.guide/guides/gtk/3/07-buttons.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/08-editing-text",
+    "title": "\"Editing Text | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/08-editing-text",
+    "raw": "/raw/gjs.guide/guides/gtk/3/08-editing-text.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/09-images",
+    "title": "\"Images | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/09-images",
+    "raw": "/raw/gjs.guide/guides/gtk/3/09-images.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/10-building-app",
+    "title": "\"Building a GTK Application | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/10-building-app",
+    "raw": "/raw/gjs.guide/guides/gtk/3/10-building-app.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/11-packaging",
+    "title": "\"Packaging | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/11-packaging",
+    "raw": "/raw/gjs.guide/guides/gtk/3/11-packaging.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/12-app-dev",
+    "title": "\"Setting Up Your Application Development Environment\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/12-app-dev",
+    "raw": "/raw/gjs.guide/guides/gtk/3/12-app-dev.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/13-ui",
+    "title": "\"Creating A User Interface | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/13-ui",
+    "raw": "/raw/gjs.guide/guides/gtk/3/13-ui.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/14-templates",
+    "title": "\"Loading User Interface Files In GJS\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/14-templates",
+    "raw": "/raw/gjs.guide/guides/gtk/3/14-templates.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/15-saving-data",
+    "title": "\"Saving Application Data | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/15-saving-data",
+    "raw": "/raw/gjs.guide/guides/gtk/3/15-saving-data.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/16-settings",
+    "title": "\"Application Settings | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/16-settings",
+    "raw": "/raw/gjs.guide/guides/gtk/3/16-settings.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/17-dialogs",
+    "title": "\"Dialogs | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/17-dialogs",
+    "raw": "/raw/gjs.guide/guides/gtk/3/17-dialogs.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3/README",
+    "title": "\"GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3/README",
+    "raw": "/raw/gjs.guide/guides/gtk/3/README.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/3",
+    "title": "\"Using GTK3 in GJS | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/3",
+    "raw": "/raw/gjs.guide/guides/gtk/3.md"
+  },
+  {
+    "slug": "gjs.guide/guides/gtk/application-packaging",
+    "title": "\"GTK Application Packaging Specification | GNOME JavaScript\"",
+    "path": "/doc/gjs.guide/guides/gtk/application-packaging",
+    "raw": "/raw/gjs.guide/guides/gtk/application-packaging.md"
   },
   {
     "slug": "libp2p.io/_index",
