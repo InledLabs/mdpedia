@@ -13,8 +13,8 @@ export const GET: APIRoute = ({ params, url }) => {
 
   const origin = url.origin;
   
-  // Transform /doc/ links to absolute /raw/ links with .md for the AI
-  const aiContent = content.replace(/\/doc\/([^\\s\\)]+)/g, `${origin}/raw/$1.md`);
+  // Transform /doc/ links to absolute /raw/ links with .md for the IA
+  const aiContent = content.replace(/\/doc\/([^\s\)]+)/g, `${origin}/raw/$1.md`);
 
   return new Response(aiContent, {
     headers: {
