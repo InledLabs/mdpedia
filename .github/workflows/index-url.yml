@@ -16,6 +16,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Initial acknowledgment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: "Hi! I'm starting to process your request. I'll let you know once the indexing is complete. ⚙️"
+            });
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -51,8 +62,8 @@ jobs:
             const isReindex = url.startsWith('reindex ');
             const origin = "https://mdpedia.inled.es";
             
-            let body = "¡Hola @" + user + "! ";
-            body += isReindex ? "Actualización de índices completada. 🛠️\n\n" : "Indexación completada con éxito. 🚀\n\n";
+            let body = "Hi @" + user + "! ";
+            body += isReindex ? "Index update completed. 🛠️\n\n" : "Indexing completed successfully. 🚀\n\n";
             
             if (isWildcard || isReindex) {
                 const cleanUrl = url.replace('reindex ', '').replace('*', '');
@@ -62,9 +73,9 @@ jobs:
                 const indexPath = "doc/" + domain + pathname + "/_index";
                 const rawPath = "raw/" + domain + pathname + "/_index.md";
                 
-                body += "Se han procesado los índices para el dominio **" + domain + "**.\n\n" +
-                        "- 📚 **Índice del Dominio**: [" + indexPath + "](" + origin + "/" + indexPath + ")\n" +
-                        "- 🤖 **Índice Raw para IA**: " + origin + "/" + rawPath + "\n";
+                body += "Processed indices for the domain **" + domain + "**.\n\n" +
+                        "- 📚 **Domain Index**: [" + indexPath + "](" + origin + "/" + indexPath + ")\n" +
+                        "- 🤖 **Raw AI Index**: " + origin + "/" + rawPath + "\n";
             } else {
                 const urlObj = new URL(url);
                 const domain = urlObj.hostname;
@@ -72,11 +83,11 @@ jobs:
                 const rawPath = "raw/" + domain + pathname + ".md";
                 const docPath = "doc/" + domain + pathname;
                 
-                body += "- 📖 **Vista Humana**: [" + docPath + "](" + origin + "/" + docPath + ")\n" +
-                        "- 🤖 **Raw para Agentes**: " + origin + "/" + rawPath + "\n\n";
+                body += "- 📖 **Human View**: [" + docPath + "](" + origin + "/" + docPath + ")\n" +
+                        "- 🤖 **Raw for AI Agents**: " + origin + "/" + rawPath + "\n\n";
             }
             
-            body += "*Nota: Puede tardar un par de minutos en estar disponible mientras se despliega la nueva versión.*";
+            body += "*Note: It might take a couple of minutes to be available while the new version is deployed.*";
 
             await github.rest.issues.createComment({
               owner: context.repo.owner,
